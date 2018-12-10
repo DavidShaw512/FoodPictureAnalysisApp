@@ -7,27 +7,43 @@ body {
 }
 
 .page-container {
-	max-width: 600px;
+	max-width: 900px;
 	text-align: center;
 	margin: 0 auto;
 	border: 2px dotted red;
 }
 
-.picture-results {
+.predictions-box {
 	text-align: left;
 	background-color: beige;
 	padding: 5px;
+	margin: 5px;
 	border: 1px dotted pink;
 }
 
 .ingredient {
+	font-size: 20px;
 	padding: 5px;
+	margin: 5px;
 	border: 2px solid black;
 	background-color: white;
-	
 }
 
+.delete-button {
+	background-color: red;
+	color: white;
+	cursor: pointer;
+	border: none;
+	float: right;
+}
 
+.ingredient:hover {
+	background-color: lightgray;
+}
+
+.delete-button:hover {
+	border: 2px solid black;
+}
 
 
 
@@ -38,4 +54,8 @@ body {
 	padding: 5px;
 	border: 1px solid green;
 	margin: 10px;
+}
+
+.recipe-name {
+	font-size: 20px;
 }
