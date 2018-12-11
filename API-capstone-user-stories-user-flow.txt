@@ -1,0 +1,24 @@
+API Mashup Capstone
+
+User Stories:
+Users should be able to upload a picture
+Users should recieve a list of predicted ingredients based on the picture
+Users should be able to refine the list of ingredients manually
+Users should recieve recipes based on their final ingredient list
+
+
+User Flow:
+-User clicks on image upload button
+-User chooses an image to upload to the app, or takes one live
+-User is presented with a list of ingredients that the Clarifai functionality identified in the picture
+	-If the results are not quite right, the user may choose to 	delete some items from the list or add items to the list. If it's 	totally wrong, the user can click on a 'retry' button to go back 	to the beginning.
+	-(I don't know if Clarifai will return an error; it will always 		try to predict something)
+-User clicks a 'continue' button to be presented with recipes that include the listed ingredients.
+
+
+
+
+
+
+
+
