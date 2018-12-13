@@ -55,3 +55,29 @@ const ingredientModule = (function() {
   }
 
 })();
+
+
+// Stubbed code from other page
+
+function renderLandingPage(state) {
+    const landingPageContent = `
+        <p>Upload a picture of the food you've got, and we'll figure out what you can make!</p>
+        <form id="image-upload-form" role="form">
+            <input type="file" accept="image/*" value="Browse Files">
+            <input type="submit" value="Go!" class="submit-button">
+        </form>
+        `;
+
+    const landingPage = renderLayout(landingPageContent);
+    $("#root").append(landingPage);
+    handleImageSubmit();
+}
+
+function handleImageSubmit(state) {
+    ${'.submit-button'}.click(function(event) {
+        event.preventDefault();
+        /* functionality that deals with sending the picture to the Clarifai API */
+        state.currentPage = 'ingredients';
+        render(state);
+    })
+}
