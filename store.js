@@ -18,3 +18,12 @@
 // Get things moved into modules, get modules running, get everything generating statically (put in api data later)
 // Start playing around with the APIs, maybe in postman, maybe using one-off functions
 // Commit regularly!
+
+
+
+const STORE = {
+    currentPage = "upload",
+    image = "",
+    ingredients = [],
+    recipes = [],
+}

@@ -1,6 +1,6 @@
 // From stup page, pre-modulated::::::::::::::::::::::::::::::::::::::::::::::::
 
-const recipes = (function() {
+const recipesModule = (function() {
 
     // Private
 
@@ -47,4 +47,4 @@ const recipes = (function() {
         render: renderRecipesPage
     }
 
-})
+})()

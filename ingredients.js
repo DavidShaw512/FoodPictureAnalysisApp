@@ -1,6 +1,6 @@
 // From stub page, pre-modulated::::::::::::::::::::::::::::::::::::::::::::::::
 
-const ingredients = (function() {
+const ingredientsModule = (function() {
     // Private (private stuff gets underscore, you need to change references accordingly)
 
     let _render = false;
@@ -41,7 +41,7 @@ const ingredients = (function() {
     }
 
     function renderIngredientsPage(state) {
-        const ingredientList = renderIngredientList(/* apiFetch.ingredients */)
+        const ingredientList = _renderIngredientList(/* apiFetch.ingredients */)
         const ingredientsPageContent = `
             <p>Is this what was in your picture? If we got it wrong, you can add or delete items...</p>
             <div class="predictions-box">  
@@ -51,7 +51,7 @@ const ingredients = (function() {
             `;
         const ingredientsPage = renderLayout(ingredientsPageContent);
         $('#root').append(ingredientsPage);
-        handleConfirmIngredients(state);
+        _handleConfirmIngredients(state);
     }
 
     return {
