@@ -35,7 +35,7 @@ function renderLandingPage(state) {
 }
 
 function handleImageSubmit(state) {
-    ${'.submit-button'}.click(function(event) {
+    $('.submit-button').click(function(event) {
         event.preventDefault();
         /* functionality that deals with sending the picture to the Clarifai API */
         state.currentPage = 'ingredients';
@@ -79,7 +79,7 @@ function renderIngredientList(ingredientList) {
 }
 
 function handleConfirmIngredients(state) {
-    ${'#confirm-ingredients-button'}.click(function(event) {
+    $('#confirm-ingredients-button').click(function(event) {
         event.preventDefault();
         /* functionality that deals with sending the ingredients to the Edamam API */
         state.currentPage = "recipes";
@@ -128,21 +128,26 @@ function renderRecipeList(recipeList) {
 
 
 function render(state) {
-    $("#root").empty();
-    switch(state.currentPage) {
-        case 'upload':
-            imageModule.renderPage(state);
-            console.log("Rendering upload/landing page");
-            break;
-        case 'ingredients':
-            ingredientsModule.renderPage(state);
-            console.log("Rendering ingredients/feedback page");
-            break;
-        case 'recipes':
-            recipesModule.renderPage(state);
-            console.log("Rendering recipes/results page");
-            break;
-        default:
-            imageModule.renderPage(state);
-    };
+    // $("#root").empty();
+    // switch(state.currentPage) {
+    //     case 'upload':
+    //         imageModule.renderPage(state);
+    //         console.log("Rendering upload/landing page");
+    //         break;
+    //     case 'ingredients':
+    //         ingredientsModule.renderPage(state);
+    //         console.log("Rendering ingredients/feedback page");
+    //         break;
+    //     case 'recipes':
+    //         recipesModule.renderPage(state);
+    //         console.log("Rendering recipes/results page");
+    //         break;
+    //     default:
+    //         imageModule.renderPage(state);
+    // };
+}
+
+function main() {
+    ingredients.initiate(render);
+    
 }
