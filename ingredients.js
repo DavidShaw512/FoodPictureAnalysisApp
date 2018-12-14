@@ -35,8 +35,8 @@ const ingredients = (function() {
     // Public
 
     function initiate(mainRender) {
-        if (!render) {
-            render = mainRender;
+        if (!_render) {
+            _render = mainRender;
         };
     }
 

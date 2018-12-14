@@ -74,7 +74,7 @@ function renderLandingPage(state) {
 }
 
 function handleImageSubmit(state) {
-    ${'.submit-button'}.click(function(event) {
+    $('.submit-button').click(function(event) {
         event.preventDefault();
         /* functionality that deals with sending the picture to the Clarifai API */
         state.currentPage = 'ingredients';
