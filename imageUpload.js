@@ -50,7 +50,6 @@ const ingredientModule = (function() {
   }
 
   return {
-    myPublic,
     render
   }
 

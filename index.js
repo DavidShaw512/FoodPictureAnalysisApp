@@ -128,6 +128,24 @@ function renderRecipeList(recipeList) {
 
 
 function render(state) {
+    $("#root").empty();
+    switch(state.currentPage) {
+        case 'upload':
+            renderLandingPage(state);
+            console.log("Rendering upload/landing page");
+            break;
+        case 'ingredients':
+            renderIngredientsPage(state);
+            console.log("Rendering ingredients/feedback page");
+            break;
+        case 'recipes':
+            renderRecipesPage(state);
+            console.log("Rendering recipes/results page");
+            break;
+        default:
+            renderLandingPage(state);
+    };
+
     // $("#root").empty();
     // switch(state.currentPage) {
     //     case 'upload':
@@ -147,7 +165,17 @@ function render(state) {
     // };
 }
 
-function main() {
-    ingredients.initiate(render);
+// function main() {
+//     imageUploadModule.initiate(render);
+//     ingredientsModule.initiate(render);
+//     recipesModule.initiate(render);
+//     renderLayout();
+//     renderLandingPage();
     
-}
+// }
+
+$(function() {
+    console.log("Loaded up!");
+    render(STORE);
+
+});

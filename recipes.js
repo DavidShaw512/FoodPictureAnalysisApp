@@ -15,7 +15,7 @@ const recipesModule = (function() {
     }
         
     function _renderRecipeList(recipeList) {
-        const recipes = recipeList.map(renderRecipe);
+        const recipes = recipeList.map(_renderRecipe);
         return `
             ${recipes.join('')}
             `;
@@ -30,7 +30,7 @@ const recipesModule = (function() {
     }
 
     function renderRecipesPage(state) {
-        const recipeList = renderRecipeList(state.recipeList)
+        const recipeList = _renderRecipeList(state.recipeList)
         const recipesPageContent = `
             <div class="recipe-results" id="recipe-results">
                 ${recipeList}
