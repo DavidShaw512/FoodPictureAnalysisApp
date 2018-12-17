@@ -31,7 +31,7 @@ function renderLandingPage(state) {
 
     const landingPage = renderLayout(landingPageContent);
     $("#root").append(landingPage);
-    handleImageSubmit();
+    handleImageSubmit(state);
 }
 
 function handleImageSubmit(state) {
@@ -49,24 +49,29 @@ function handleImageSubmit(state) {
 // Feedback/Ingredients page module ****************************
 // Will put these in a module -- ingredientsModule = (function() {...})
 function renderIngredientsPage(state) {
-    const ingredientList = renderIngredientList(/* apiFetch.ingredients */)
+    const ingredientList = renderIngredientList(state.ingredients/* apiFetch.ingredients */)
     const ingredientsPageContent = `
         <p>Is this what was in your picture? If we got it wrong, you can add or delete items...</p>
         ${ingredientList}
-        <button class="confirm-ingredients-button">Get some recipes!</button>
+        <form role="form">
+            <input type="text" name="add-ingredient" id="add-ingredient" val="Missed any? Add them here!">
+            <input type="submit" name="add-ingredient-button" id="add-ingredient-button" val="Add ingredient">
+        </form>
+        <button class="confirm-ingredients-button" id="confirm-ingredients-button">Get some recipes!</button>
         `;
+        
     const ingredientsPage = renderLayout(ingredientsPageContent);
     $('#root').append(ingredientsPage);
     handleConfirmIngredients(state);
 }
 
 function renderIngredient(ingredient) {
-    if (ingredient.probability >= 0.5) {
+    // if (ingredient.probability >= 0.5) {
     return `
-        <div class="ingredient">${ingredient.name}<button class="delete-button">X</button>
+        <div class="ingredient">${ingredient}<button class="delete-button">X</button>
         </div>
         `;
-    };
+    // };
 }
 
 function renderIngredientList(ingredientList) {
@@ -87,6 +92,14 @@ function handleConfirmIngredients(state) {
     });
 }
 
+function handleDeleteIngredient() {
+    $(".delete-button").click(function(event) {
+        event.preventDefault();
+        console.log("Delete button clicked");
+        $(this).closest("div").remove();
+    });
+}
+
 
 
 
@@ -95,7 +108,7 @@ function handleConfirmIngredients(state) {
 // Results/Recipes page module ********************************
 // Will put these in a module -- recipesModule = (function() {...})
 function renderRecipesPage(state) {
-    const recipeList = renderRecipeList(state.recipeList)
+    const recipeList = renderRecipeList(state.recipes)
     const recipesPageContent = `
         <div class="recipe-results" id="recipe-results">
             ${recipeList}
@@ -110,7 +123,7 @@ function renderRecipesPage(state) {
 function renderRecipe(recipe) {
     return `
         <div class="recipe-card">
-            <a href="${recipe.url}" target="_blank"><p class="recipe-name">${recipe.name}</p></a>
+            <a href="${recipe.shareAs}" target="_blank"><p class="recipe-name">${recipe.label}</p></a>
         </div>
         `
 }
@@ -127,25 +140,36 @@ function renderRecipeList(recipeList) {
 
 
 
-function render(state) {
+function render(currentState) {
     $("#root").empty();
-    switch(state.currentPage) {
+    switch(currentState.currentPage) {
         case 'upload':
-            renderLandingPage(state);
+            renderLandingPage(currentState);
             console.log("Rendering upload/landing page");
+            console.log(currentState);
             break;
         case 'ingredients':
-            renderIngredientsPage(state);
+            renderIngredientsPage(currentState);
             console.log("Rendering ingredients/feedback page");
             break;
         case 'recipes':
-            renderRecipesPage(state);
+            renderRecipesPage(currentState);
             console.log("Rendering recipes/results page");
             break;
         default:
-            renderLandingPage(state);
+            renderLandingPage(currentState);
     };
+}
 
+$(function() {
+    console.log("Loaded up!");
+    render(STORE);
+    handleDeleteIngredient();
+
+});
+
+    
+// function render(currentState) {
     // $("#root").empty();
     // switch(state.currentPage) {
     //     case 'upload':
@@ -163,7 +187,7 @@ function render(state) {
     //     default:
     //         imageModule.renderPage(state);
     // };
-}
+
 
 // function main() {
 //     imageUploadModule.initiate(render);
@@ -174,8 +198,3 @@ function render(state) {
     
 // }
 
-$(function() {
-    console.log("Loaded up!");
-    render(STORE);
-
-});
