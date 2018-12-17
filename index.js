@@ -193,8 +193,6 @@ $(function() {
 //     imageUploadModule.initiate(render);
 //     ingredientsModule.initiate(render);
 //     recipesModule.initiate(render);
-//     renderLayout();
-//     renderLandingPage();
     
 // }
 

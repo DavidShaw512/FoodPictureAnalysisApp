@@ -27,6 +27,6 @@ const STORE = {
     ingredients: ["Kale", "Sweet Potatoes"],
     recipes: [ {
         label: "Kale & Sweet Potatoes",
-        shareAs: "google.com"
+        shareAs: "https://google.com"
     }],
  }

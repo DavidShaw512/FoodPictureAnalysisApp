@@ -56,7 +56,7 @@ const ingredientModule = (function() {
 })();
 
 
-// Stubbed code from other page
+// Begin working module: ***********************************************************
 
 const imageUploadModule = (function() {
 
@@ -81,7 +81,7 @@ const imageUploadModule = (function() {
         }
     }
 
-    function renderLandingPage() {
+    function renderLandingPage(state) {
         const landingPageContent = `
             <p>Upload a picture of the food you've got, and we'll figure out what you can make!</p>
             <form id="image-upload-form" role="form">
@@ -92,11 +92,11 @@ const imageUploadModule = (function() {
     
         const landingPage = renderLayout(landingPageContent);
         $("#root").append(landingPage);
-        _handleImageSubmit();
+        _handleImageSubmit(state);
     }
     
     return {
         render: renderLandingPage
     }
     
-})()
+})();

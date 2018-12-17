@@ -8,18 +8,20 @@ const ingredientsModule = (function() {
     
     
     function _renderIngredient(ingredient) {
-        if (ingredient.probability >= 0.5) {
+        // if (ingredient.probability >= 0.5) {
         return `
-            <div class="ingredient">${ingredient.name}<button class="delete-button">X</button>
+            <div class="ingredient">${ingredient}<button class="delete-button">X</button>
             </div>
             `;
-        };
+        // };
     }
     
     function _renderIngredientList(ingredientList) {
         const ingredients = ingredientList.map(_renderIngredient);
         return `
-            ${ingredients.join("")}
+            <div class="predictions-box">
+                ${ingredients.join("")}
+            </div>
             `;
     }
     
@@ -41,14 +43,17 @@ const ingredientsModule = (function() {
     }
 
     function renderIngredientsPage(state) {
-        const ingredientList = _renderIngredientList(/* apiFetch.ingredients */)
+        const ingredientList = _renderIngredientList(state.ingredients/* apiFetch.ingredients */)
         const ingredientsPageContent = `
             <p>Is this what was in your picture? If we got it wrong, you can add or delete items...</p>
-            <div class="predictions-box">  
-                ${ingredientList}
-            </div>
-            <button class="confirm-ingredients-button">Get some recipes!</button>
+            ${ingredientList}
+            <form role="form">
+                <input type="text" name="add-ingredient" id="add-ingredient" val="Missed any? Add them here!">
+                <input type="submit" name="add-ingredient-button" id="add-ingredient-button" val="Add ingredient">
+            </form>
+            <button class="confirm-ingredients-button" id="confirm-ingredients-button">Get some recipes!</button>
             `;
+            
         const ingredientsPage = renderLayout(ingredientsPageContent);
         $('#root').append(ingredientsPage);
         _handleConfirmIngredients(state);

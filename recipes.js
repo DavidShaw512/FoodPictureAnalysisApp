@@ -4,12 +4,12 @@ const recipesModule = (function() {
 
     // Private
 
-    let _return = false;
+    let _render = false;
     
     function _renderRecipe(recipe) {
         return `
             <div class="recipe-card">
-                <a href="${recipe.shareAs}" target="_blank"><p class="recipe-label">${recipe.label}</p></a>
+                <a href="${recipe.shareAs}" target="_blank"><p class="recipe-name">${recipe.label}</p></a>
             </div>
             `
     }
@@ -30,13 +30,13 @@ const recipesModule = (function() {
     }
 
     function renderRecipesPage(state) {
-        const recipeList = _renderRecipeList(state.recipeList)
+        const recipeList = _renderRecipeList(state.recipes)
         const recipesPageContent = `
             <div class="recipe-results" id="recipe-results">
                 ${recipeList}
             </div>
             `;
-
+    
         const recipePage = renderLayout(recipesPageContent);
         $('#root').append(recipePage);
         handleRetry(state);
