@@ -13,47 +13,47 @@
 // flesh out all render methods and turn static html into dynamically rendered jquery components.
 
 
-const ingredientModule = (function() { 
-  const ingredients = [
-    {
-      name: 'carrots',
-    },
-    {
-      name: 'brocolli'
-    }
-  ]
+// const ingredientModule = (function() { 
+//   const ingredients = [
+//     {
+//       name: 'carrots',
+//     },
+//     {
+//       name: 'brocolli'
+//     }
+//   ]
 
 
-  // Render methods
-  function renderIngredientList(ingredients) {
-    ingredients.map(renderIngredient).join('');
-  }
+//   // Render methods
+//   function renderIngredientList(ingredients) {
+//     ingredients.map(renderIngredient).join('');
+//   }
 
-  function renderIngredient(ingredient) {
-    return `
-      <div>${ingredient.name}</div>
-    `
-  }
+//   function renderIngredient(ingredient) {
+//     return `
+//       <div>${ingredient.name}</div>
+//     `
+//   }
 
-  function handleSubmit() {
-    // function stub
-  }
+//   function handleSubmit() {
+//     // function stub
+//   }
 
-  function getClarifaiResults() {
+//   function getClarifaiResults() {
 
-  }
+//   }
 
-  function render() {
-    const ingredientList = renderIngredientList(ingredients);
-    const page = commonModule.mainLayout(ingredientList);
-    $('#root').append(page);
-  }
+//   function render() {
+//     const ingredientList = renderIngredientList(ingredients);
+//     const page = commonModule.mainLayout(ingredientList);
+//     $('#root').append(page);
+//   }
 
-  return {
-    render
-  }
+//   return {
+//     render
+//   }
 
-})();
+// })();
 
 
 // Begin working module: ***********************************************************
@@ -78,7 +78,7 @@ const imageUploadModule = (function() {
     function initiate(mainRender) {
         if (!_render) {
             _render = mainRender;
-        }
+        };
     }
 
     function renderLandingPage(state) {

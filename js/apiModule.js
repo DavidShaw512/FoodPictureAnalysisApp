@@ -47,3 +47,18 @@ function getRecipesFromIngredients(ingredients) {
 
 // Base URL:
 // https://api.clarifai.com/v2/
+
+// Model ID:
+// bd367be194cf45149e75f01d59f77ba7
+
+// Insert for authentication:
+// const app = new Clarifai.App({apiKey: 'YOUR_API_KEY'});
+
+app.models.predict("bd367be194cf45149e75f01d59f77ba7", {base64: "nv8wdnack9..."}).then(
+    function(response) {
+      // do something with response
+    },
+    function(err) {
+      // there was an error
+    }
+  );
