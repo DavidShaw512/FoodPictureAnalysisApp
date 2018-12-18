@@ -37,14 +37,15 @@ const recipesModule = (function() {
             </div>
             `;
     
-        const recipePage = renderLayout(recipesPageContent);
+        const recipePage = commonModule.renderLayout(recipesPageContent);
         $('#root').append(recipePage);
-        handleRetry(state);
+        // handleRetry(state);
     }
 
 
     return {
-        render: renderRecipesPage
+        render: renderRecipesPage,
+        initiate
     }
 
 })()

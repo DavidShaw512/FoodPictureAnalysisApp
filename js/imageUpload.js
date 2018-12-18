@@ -67,9 +67,17 @@ const imageUploadModule = (function() {
     function _handleImageSubmit(state) {
         $('.submit-button').click(function(event) {
             event.preventDefault();
+            /* Trigger file selection */
+            /* turn data into base64 */ 
             /* functionality that deals with sending the picture to the Clarifai API */
-            state.currentPage = 'ingredients';
-            render(state);
+            clarifaiAPI.analyzeImage()
+                .then(response => {
+                    console.log(response);
+                    /* Store response in the state, use data coming from API to populate the state */
+                    state.currentPage = 'ingredients';
+                    render(state);
+                })
+            
         })
     }
 
@@ -90,13 +98,14 @@ const imageUploadModule = (function() {
             </form>
             `;
     
-        const landingPage = renderLayout(landingPageContent);
+        const landingPage = commonModule.renderLayout(landingPageContent);
         $("#root").append(landingPage);
         _handleImageSubmit(state);
     }
     
     return {
-        render: renderLandingPage
+        render: renderLandingPage,
+        initiate
     }
     
 })();

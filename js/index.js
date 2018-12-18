@@ -3,7 +3,7 @@
 
 // Common *********************************************
 // Will put these in a module -- commonModule = (function() {...})
-// function renderLayout(children) {
+// function commonModule.renderLayout(children) {
 //     return `
 //         <header class="banner">
 //             <h1>Recipe Finder App</h1>
@@ -29,7 +29,7 @@
 //         </form>
 //         `;
 
-//     const landingPage = renderLayout(landingPageContent);
+//     const landingPage = commonModule.renderLayout(landingPageContent);
 //     $("#root").append(landingPage);
 //     handleImageSubmit(state);
 // }
@@ -60,7 +60,7 @@
 //         <button class="confirm-ingredients-button" id="confirm-ingredients-button">Get some recipes!</button>
 //         `;
         
-//     const ingredientsPage = renderLayout(ingredientsPageContent);
+//     const ingredientsPage = commonModule.renderLayout(ingredientsPageContent);
 //     $('#root').append(ingredientsPage);
 //     handleConfirmIngredients(state);
 // }
@@ -115,7 +115,7 @@
 //         </div>
 //         `;
 
-//     const recipePage = renderLayout(recipesPageContent);
+//     const recipePage = commonModule.renderLayout(recipesPageContent);
 //     $('#root').append(recipePage);
 //     handleRetry(state);
 // }
@@ -137,13 +137,7 @@
 
 
 
-function main() {
-    
-    imageUploadModule.initiate(render);
-    ingredientsModule.initiate(render);
-    recipesModule.initiate(render);
-    render(STORE);
-}
+
 
 
 
@@ -152,22 +146,31 @@ function render(currentState) {
     $("#root").empty();
     switch(currentState.currentPage) {
         case 'upload':
-            renderLandingPage(currentState);
+            imageUploadModule.render(currentState);
             console.log("Rendering upload/landing page");
             console.log(currentState);
             break;
         case 'ingredients':
-            renderIngredientsPage(currentState);
+            ingredientsModule.render(currentState);
             console.log("Rendering ingredients/feedback page");
             break;
         case 'recipes':
-            renderRecipesPage(currentState);
+            recipesModule.render(currentState);
             console.log("Rendering recipes/results page");
             break;
         default:
-            renderLandingPage(currentState);
+            imageUploadModule.render(currentState);
     };
 }
+
+
+function main() {
+    imageUploadModule.initiate(render);
+    ingredientsModule.initiate(render);
+    recipesModule.initiate(render);
+    render(STORE);
+}
+
 
 $(function() {
     main();

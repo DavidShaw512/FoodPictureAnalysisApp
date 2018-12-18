@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<title>Clarifai/Edamam API Mashup</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<script
 		src="https://code.jquery.com/jquery-3.2.1.min.js"
 		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -12,11 +12,13 @@
 		<div id="root" class="page-container">
 		</div>
 
-		<script src="common.js"></script>
-		<script src="imageUpload.js"></script>
-		<script src="ingredients.js"></script>
-		<script src="recipes.js"></script>
-		<script src="store.js"></script>
-		<script src="index.js"></script>
+		<!-- Let the common stuff load first, and the index load last so it has access to all the stuff it needs: -->
+		<script src="js/common.js"></script>
+		<script src="js/apiModule.js"></script>
+		<script src="js/imageUpload.js"></script>
+		<script src="js/ingredients.js"></script>
+		<script src="js/recipes.js"></script>
+		<script src="js/store.js"></script>
+		<script src="js/index.js"></script>
 	</body>
 </html>

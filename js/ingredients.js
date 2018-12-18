@@ -54,13 +54,14 @@ const ingredientsModule = (function() {
             <button class="confirm-ingredients-button" id="confirm-ingredients-button">Get some recipes!</button>
             `;
             
-        const ingredientsPage = renderLayout(ingredientsPageContent);
+        const ingredientsPage = commonModule.renderLayout(ingredientsPageContent);
         $('#root').append(ingredientsPage);
         _handleConfirmIngredients(state);
     }
 
     return {
-        render: renderIngredientsPage
+        render: renderIngredientsPage,
+        initiate
     }
 
 
