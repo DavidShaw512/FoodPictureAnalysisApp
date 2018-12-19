@@ -24,7 +24,7 @@
 const STORE = {
     currentPage: "upload",
     image: "",
-    ingredients: ["Kale", "Sweet Potatoes"],
+    ingredients: [],
     recipes: [ {
         label: "Kale & Sweet Potatoes",
         shareAs: "https://google.com"
