@@ -115,7 +115,7 @@ const clarifaiAPI = (function() {
 
     const fullArray = arrayOfImageResults.outputs[0].data.concepts;
     fullArray.map(item => {
-      if (item.value >= 0.8) {
+      if (item.value >= 0.85) {
       STORE.ingredients.push(`${item.name}`)
       }
     });

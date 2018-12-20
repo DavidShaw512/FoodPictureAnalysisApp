@@ -10,7 +10,7 @@ const ingredientsModule = (function() {
     function _renderIngredient(ingredient) {
         // if (ingredient.probability >= 0.5) {
         return `
-            <div class="ingredient">${ingredient}<button class="delete-button">X</button>
+            <div class="ingredient"><p class="ingredient-label">${ingredient}</p><button class="delete-button">X</button>
             </div>
             `;
         // };
@@ -19,7 +19,7 @@ const ingredientsModule = (function() {
     function _renderIngredientList(ingredientList) {
         const ingredients = ingredientList.map(_renderIngredient);
         return `
-            <div class="predictions-box">
+            <div class="predictions-box" id="predictions-box">
                 ${ingredients.join("")}
             </div>
             `;
@@ -41,6 +41,33 @@ const ingredientsModule = (function() {
             // state.currentPage = "recipes";
             // render(state);
         });
+    }
+
+    // Remove an ingredient from the list on the page and from the STORE
+    function _handleRemoveIngredient() {
+        $('.delete-button').click(function(event) {
+            event.preventDefault();
+            const ingredientText = $(this).closest('p').innerText;
+            console.log(ingredientText);
+            const index = STORE.ingredients.indexOf(ingredientText);
+            // STORE.ingredients.splice(index, 1);
+            // $(this).closest('div').remove();
+
+        })
+    }
+
+    // Add a new ingredient to the list on the page and to the STORE
+    function _handleAddIngredient() {
+        $('#add-ingredient-button').click(function(event) {
+            event.preventDefault();
+            const newIngredient = $('#add-ingredient').val();
+            STORE.ingredients.push(newIngredient);
+            const newIngredientItem = `
+            <div class="ingredient"><p class="ingredient-label">${newIngredient}<p><button class="delete-button">X</button>
+            </div>
+            `;
+            $('#predictions-box').append(newIngredientItem);
+        })
     }
 
     // Public
@@ -66,6 +93,8 @@ const ingredientsModule = (function() {
         const ingredientsPage = commonModule.renderLayout(ingredientsPageContent);
         $('#root').append(ingredientsPage);
         _handleConfirmIngredients(state);
+        _handleRemoveIngredient(state);
+        _handleAddIngredient();
     }
 
     return {
