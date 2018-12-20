@@ -68,8 +68,17 @@ const imageUploadModule = (function() {
         $('.submit-button').click(function(event) {
             event.preventDefault();
             /* Trigger file selection */
+            const selectedFile = document.getElementById("file").files[0];
+            console.log(selectedFile);
             /* turn data into base64 */ 
+            const reader = new FileReader();
+            reader.onloadend = function() {
+                console.log('RESULT', reader.result);
+            };
+            reader.readAsDataURL(selectedFile);
             /* functionality that deals with sending the picture to the Clarifai API */
+            console.log(clarifaiAPI);
+            console.log(clarifaiAPI.analyzeImage);
             clarifaiAPI.analyzeImage()
                 .then(response => {
                     console.log(response);
@@ -93,7 +102,7 @@ const imageUploadModule = (function() {
         const landingPageContent = `
             <p>Upload a picture of the food you've got, and we'll figure out what you can make!</p>
             <form id="image-upload-form" role="form">
-                <input type="file" accept="image/*" value="Browse Files">
+                <input type="file" id="file" accept="image/*" value="Browse Files">
                 <input type="submit" value="Go!" class="submit-button">
             </form>
             `;

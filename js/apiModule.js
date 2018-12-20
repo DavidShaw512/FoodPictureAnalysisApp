@@ -41,15 +41,31 @@ const edamamAPI = (function() {
   function analyzeIngredients() {
     fetch('https://api.edamam.com/search?q=zucchini+kale+banana&app_id=cf776843&app_key=aa1a00e09c97f5eb02a17ec911d35248')
       .then(responseToJson)
-      .then(console.log(response));
+      .then(responseJson => {
+        console.log(responseJson);
+        extractRecipeData(responseJson);
+      })
 
-  }
+  };
 
   const responseToJson = ((response) => response.json());
 
-  return analyzeIngredients
+  function extractRecipeData(arrayOfRawRecipes) {
+      // Isolate the array of recipes with a const, then populate STORE.recipes by mapping their labels and 'shareAs' urls
 
-})
+    const arrayOfRecipes = arrayOfRawRecipes.hits;
+    console.log(arrayOfRecipes);
+    arrayOfRecipes.map((item) => console.log(item.recipe.shareAs));
+    arrayOfRecipes.map((item) => STORE.recipes.push({
+      label: `${item.recipe.label}`,
+      shareAs: `${item.recipe.shareAs}`
+    }) );
+  }
+
+  return {
+    analyzeIngredients,
+  }
+})();
 
 
 
@@ -93,7 +109,6 @@ const clarifaiAPI = (function() {
   }
 
   function extractIngredients(arrayOfImageResults) {
-    console.log(arrayOfImageResults.status);
     console.log(arrayOfImageResults.outputs[0].data.concepts);
 
       // Extract the ingredients with const, then populate the STORE by mapping their names

@@ -29,8 +29,17 @@ const ingredientsModule = (function() {
         $('#confirm-ingredients-button').click(function(event) {
             event.preventDefault();
             /* functionality that deals with sending the ingredients to the Edamam API */
-            state.currentPage = "recipes";
-            render(state);
+            console.log(edamamAPI);
+            console.log(edamamAPI.analyzeIngredients);
+            edamamAPI.analyzeIngredients()
+                .then(response => {
+                    console.log(response);
+                    state.currentPage = "recipes";
+                    render(state);
+                });
+            // console.log(edamamAPI);
+            // state.currentPage = "recipes";
+            // render(state);
         });
     }
 
