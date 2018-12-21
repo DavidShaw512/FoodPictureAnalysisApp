@@ -50,8 +50,6 @@ const ingredientsModule = (function() {
     function _handleRemoveIngredient(state) {
         $('.delete-button').click(function(event) {
             event.preventDefault();
-            // const ingredientText = $(this).closest('p').innerText;
-            // console.log(ingredientText);
             console.log($(this).closest('div')[0].dataset.index);
             const index = $(this).closest('div')[0].dataset.index;
             // const index = STORE.ingredients.indexOf(ingredientText);

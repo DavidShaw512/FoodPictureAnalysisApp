@@ -15,10 +15,23 @@ const recipesModule = (function() {
     }
         
     function _renderRecipeList(recipeList) {
-        const recipes = recipeList.map(_renderRecipe);
-        return `
-            ${recipes.join('')}
-            `;
+        console.log(recipeList.length);
+        const noRecipes = recipeList.length === 0;
+        return noRecipes ?
+            `<p class="no-recipes-message">We couldn\'t find any recipes using those ingredients, try again!</p>`
+            :
+            `${recipeList.map(_renderRecipe).join('')}`
+        // return `
+        //     ${recipeList.map(_renderRecipe).join('')}
+        //     `;
+    }
+
+    function _handleRetry() {
+        $('#retry-button').click(function(event) {
+            event.preventDefault();
+            window.location.href = "";
+            render();
+        })
     }
 
     // Public
@@ -35,11 +48,12 @@ const recipesModule = (function() {
             <div class="recipe-results" id="recipe-results">
                 ${recipeList}
             </div>
+            <button class="retry-button" id="retry-button">Retry?</button>
             `;
     
         const recipePage = commonModule.renderLayout(recipesPageContent);
         $('#root').append(recipePage);
-        // handleRetry(state);
+        _handleRetry();
     }
 
 
