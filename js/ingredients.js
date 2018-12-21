@@ -1,4 +1,8 @@
 // From stub page, pre-modulated::::::::::::::::::::::::::::::::::::::::::::::::
+// click delete button, find index of item, use the index to delete it from the store
+// Get edamam searching for live ingredients
+// Get state working instead of STORE on the ingredient deletion/addition (one is finished, the other will look the same)
+// Start thinking about design
 
 const ingredientsModule = (function() {
     // Private (private stuff gets underscore, you need to change references accordingly)
@@ -7,13 +11,12 @@ const ingredientsModule = (function() {
 
     
     
-    function _renderIngredient(ingredient) {
-        // if (ingredient.probability >= 0.5) {
+    function _renderIngredient(ingredient, index) {
+        console.log(index, ingredient);
         return `
-            <div class="ingredient"><p class="ingredient-label">${ingredient}</p><button class="delete-button">X</button>
+            <div class="ingredient" data-index=${index}><p class="ingredient-label">${ingredient}</p><button class="delete-button">X</button>
             </div>
             `;
-        // };
     }
     
     function _renderIngredientList(ingredientList) {
@@ -44,29 +47,33 @@ const ingredientsModule = (function() {
     }
 
     // Remove an ingredient from the list on the page and from the STORE
-    function _handleRemoveIngredient() {
+    function _handleRemoveIngredient(state) {
         $('.delete-button').click(function(event) {
             event.preventDefault();
-            const ingredientText = $(this).closest('p').innerText;
-            console.log(ingredientText);
-            const index = STORE.ingredients.indexOf(ingredientText);
-            // STORE.ingredients.splice(index, 1);
+            // const ingredientText = $(this).closest('p').innerText;
+            // console.log(ingredientText);
+            console.log($(this).closest('div')[0].dataset.index);
+            const index = $(this).closest('div')[0].dataset.index;
+            // const index = STORE.ingredients.indexOf(ingredientText);
+            state.ingredients.splice(index, 1);
             // $(this).closest('div').remove();
+            _render(state);
 
         })
     }
 
     // Add a new ingredient to the list on the page and to the STORE
-    function _handleAddIngredient() {
+    function _handleAddIngredient(state) {
         $('#add-ingredient-button').click(function(event) {
             event.preventDefault();
             const newIngredient = $('#add-ingredient').val();
-            STORE.ingredients.push(newIngredient);
-            const newIngredientItem = `
-            <div class="ingredient"><p class="ingredient-label">${newIngredient}<p><button class="delete-button">X</button>
-            </div>
-            `;
-            $('#predictions-box').append(newIngredientItem);
+            state.ingredients.push(newIngredient);
+            // const newIngredientItem = `
+            // <div class="ingredient"><p class="ingredient-label">${newIngredient}</p><button class="delete-button">X</button>
+            // </div>
+            // `;
+            // $('#predictions-box').append(newIngredientItem);
+            _render(state);
         })
     }
 
@@ -94,7 +101,7 @@ const ingredientsModule = (function() {
         $('#root').append(ingredientsPage);
         _handleConfirmIngredients(state);
         _handleRemoveIngredient(state);
-        _handleAddIngredient();
+        _handleAddIngredient(state);
     }
 
     return {

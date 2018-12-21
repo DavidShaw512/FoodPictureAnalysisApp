@@ -74,18 +74,19 @@ const imageUploadModule = (function() {
             const reader = new FileReader();
             reader.onloadend = function() {
                 console.log('RESULT', reader.result);
-            };
-            reader.readAsDataURL(selectedFile);
-            /* functionality that deals with sending the picture to the Clarifai API */
-            console.log(clarifaiAPI);
-            console.log(clarifaiAPI.analyzeImage);
-            clarifaiAPI.analyzeImage()
-                .then(response => {
-                    console.log(response);
+                clarifaiAPI.analyzeImage(reader.result.replace('data:image/jpeg;base64,', ''))
+                .then(arrayOfIngredients => {
+                    state.ingredients = arrayOfIngredients;
+                    // console.log(response); <-- that doesn't work because the 'response' is now 'arrayOfIngredients'
                     /* Store response in the state, use data coming from API to populate the state */
                     state.currentPage = 'ingredients';
                     render(state);
                 })
+
+            };
+            reader.readAsDataURL(selectedFile);
+            /* functionality that deals with sending the picture to the Clarifai API */
+            
             
         })
     }
