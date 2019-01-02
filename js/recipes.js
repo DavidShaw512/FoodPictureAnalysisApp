@@ -12,9 +12,9 @@ const recipesModule = (function() {
         console.log(recipe.shareAs);
         return `
             <div class="recipe-card">
-                <img class="recipe-image" src="${recipe.image}">
                 <p class="recipe-name">${recipe.label}</p>
-                <a href="${recipe.shareAs}" target="_blank">Get the recipe!</a>
+                <img class="recipe-image" src="${recipe.image}">
+                <a href="${recipe.shareAs}" target="_blank"><button class="recipe-link-button">Get the recipe!</button></a>
             </div>
             `
     }

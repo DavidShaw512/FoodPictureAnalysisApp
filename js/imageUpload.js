@@ -101,11 +101,19 @@ const imageUploadModule = (function() {
 
     function renderLandingPage(state) {
         const landingPageContent = `
-            <p>Upload a picture of the food you've got, and we'll figure out what you can make!</p>
-            <form id="image-upload-form" role="form">
-                <input type="file" id="file" accept="image/*" value="Browse Files">
-                <input type="submit" value="Go!" class="submit-button">
-            </form>
+            <div class="page-container">
+                <header role="banner" class="banner">
+                    <h1 class="main-logo">Foodie</h1>
+                </header>
+            
+                <p  class="header-paragraphs">Welcome to Foodie! Use this app to find exciting new recipes you can make using the food you've got! Just upload a 
+                picture of your ingredients, and the app will identify and list them. You can manually refine the list if you need to, then 
+                submit that list of ingredients to recieve some great recipes that include them!</p>
+                <form id="image-upload-form" role="form">
+                    <input type="file" id="file" accept="image/*" value="Browse Files" class="file-input"><br>
+                    <input type="submit" value="Go!" class="submit-button">
+                </form>
+            </div>
             `;
     
         const landingPage = commonModule.renderLayout(landingPageContent);

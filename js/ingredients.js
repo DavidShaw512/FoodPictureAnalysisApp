@@ -86,11 +86,11 @@ const ingredientsModule = (function() {
     function renderIngredientsPage(state) {
         const ingredientList = _renderIngredientList(state.ingredients/* apiFetch.ingredients */)
         const ingredientsPageContent = `
-            <p>Is this what was in your picture? If we got it wrong, you can add or delete items...</p>
+            <p class="header-paragraphs">Is this what was in your picture? If we got it wrong, you can add or delete items...</p>
             ${ingredientList}
             <form role="form">
-                <input type="text" name="add-ingredient" id="add-ingredient" val="Missed any? Add them here!">
-                <input type="submit" name="add-ingredient-button" id="add-ingredient-button" val="Add ingredient">
+                <input type="text" name="add-ingredient" id="add-ingredient" class="add-ingredient-field" val="Missed any? Add them here!">
+                <input type="submit" name="add-ingredient-button" id="add-ingredient-button" class="add-ingredient-button" val="Add ingredient">
             </form>
             <button class="confirm-ingredients-button" id="confirm-ingredients-button">Get some recipes!</button>
             `;

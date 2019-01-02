@@ -46,8 +46,9 @@ const edamamAPI = (function() {
     console.log(arrayOfRecipes);
     arrayOfRecipes.map((item) => console.log(item.recipe.shareAs));
     STORE.recipes = arrayOfRecipes.map((item) => ({
-      label: `${item.recipe.label}`,
-      shareAs: `${item.recipe.shareAs}`
+      label: item.recipe.label,
+      shareAs: item.recipe.shareAs,
+      image: item.recipe.image
     }) );
   }
 

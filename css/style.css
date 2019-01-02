@@ -3,30 +3,93 @@
 }
 
 body {
-	font-family: 'Roboto', sans-serif;
-	background-color: aliceblue
+	font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    background-color: #e6e6e6;
+	padding-top: 30px;
+	text-align: center;
+    /* background-image: url(file:///C:/Users/David/git-projects/asyncWebAppsProjects/apiCapstoneFoodProject/food-background-light.jpg); */
+    /* opacity: .2; */
+    /* background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover; */
 }
 
 .page-container {
 	max-width: 900px;
-	text-align: center;
 	margin: 0 auto;
-	border: 2px dotted red;
+}
+
+.banner{
+	color: black;
+	padding-top: 200px;
+	font-family: 'Thasadith', 'Open Sans', sans-serif;
+	font-size: 60px;
+}
+
+.main-logo {
+	background-color: white;
+	padding: 50px;
+	border-radius: 100%;
+}
+
+.header-paragraphs {
+	color: black;
+	font-size: 30px;
+	background-color: whitesmoke;
+}
+
+.file-upload-button {
+	padding: 20px;
+	font-size: 20px;
+	font-weight: 600;
+	border: none;
+	color: white;
+	background-color: black;
+	margin: 10px auto;
+	cursor: pointer;
+	border-radius: 25px;
+}
+
+.file-input {
+	background-color: black;
+    color: white;
+    font-size: 30px;
+    padding: 20px;
+	max-width: 100%;
+}
+
+.submit-button {
+	padding: 20px 50px;
+	font-size: 60px;
+	font-weight: 600;
+	border: none;
+	color: white;
+	background-color: black;
+	margin: 20px auto;
+	cursor: pointer;
+	border-radius: 30px;
+	position: relative;
+	top: 1px;
+}
+
+.submit-button:hover {
+	background-color: white;
+	color: black;
+	transition: 0.3s;
 }
 
 .predictions-box {
 	text-align: left;
-	background-color: beige;
 	padding: 5px;
 	margin: 5px;
-	border: 1px dotted pink;
 }
 
 .ingredient {
-	font-size: 20px;
-	padding: 5px;
-	margin: 5px;
-	border: 2px solid black;
+	font-size: 35px;
+	padding: 10px;
+	margin: 20px;
 	background-color: white;
 }
 
@@ -36,37 +99,126 @@ body {
 
 .delete-button {
 	background-color: red;
-	color: white;
-	cursor: pointer;
-	border: none;
-	float: right;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    float: right;
+    margin: 2px;
+    padding: 20px;
+    position: relative;
+    top: -12px;
+    left: 14px;
 }
 
 .ingredient:hover {
-	background-color: lightgray;
+	border-left: 10px solid black;
 }
 
 .delete-button:hover {
 	border: 2px solid black;
+	margin: 0px;
 }
 
+.add-ingredient-field {
+	height: 30px;
+	font-size: 20px;
+}
 
+.add-ingredient-button {
+	background-color: black;
+	padding: 10px;
+	cursor: pointer;
+	font-weight: 600;
+	font-size: 20px;
+	border: none;
+	color: white;
+	margin: 10px auto;
+	border-radius: 20px;
+}
 
+.add-ingredient-button:hover {
+	color: black;
+	background-color: white;
+	transition: 0.3s;
+}
+
+.confirm-ingredients-button {
+	padding: 20px;
+	font-size: 25px;
+	font-weight: 600;
+	border: none;
+	color: white;
+	background-color: black;
+	margin: 10px auto;
+	cursor: pointer;
+	border-radius: 30px;
+}
+
+.confirm-ingredients-button:hover {
+	background-color: white;
+	color: black;
+	transition: 0.3s;
+}
 
 .recipe-card {
 	text-align: left;
-	background-color: lightblue;
+	background-color: white;
 	padding: 5px;
-	border: 1px solid green;
+	border: 3px solid black;
 	margin: 10px;
 }
 
 .recipe-name {
-	font-size: 20px;
+	font-size: 25px;
+	font-weight: 600;
+	text-decoration: underline;
+	margin-top: 5px;
+	color: black;
 }
 
 .recipe-image {
-	float: right;
-	width: 150px;
-	padding: 0 5px;
+	width: 110px;
+    height: 110px;
+    padding: 0 5px;
+    position: relative;
+    right: 2px;
+}
+
+.recipe-link-button {
+	border: none;
+    padding: 10px;
+    color: white;
+    background-color: black;
+    text-decoration: underline;
+	font-size: 25px;
+	border-radius: 10px;
+    position: relative;
+    top: -50px;
+	left: 20px;
+}
+
+.recipe-link-button:hover {
+	cursor: pointer;
+	background-color: white;
+	color: black;
+	border: 2px solid black;
+}
+
+.retry-button {
+	padding: 20px;
+	font-size: 25px;
+	font-weight: 600;
+	border: none;
+	color: white;
+	background-color: black;
+	margin: 10px auto;
+	cursor: pointer;
+	border-radius: 30px;
+}
+
+.retry-button:hover {
+	color: black;
+	background-color: white;
+	transition: 0.3s;
 }
