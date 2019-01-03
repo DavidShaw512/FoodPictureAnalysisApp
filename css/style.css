@@ -48,14 +48,15 @@ h1 {
 }
 
 .header {
-	padding-top: 60px;
+	padding-top: 40px;
 	font-size: 80px;
+	margin-bottom: 20px;
 }
 
 .body-paragraphs {
 	color: #00690e;
 	font-size: 30px;
-	padding: 50px 30px;
+	padding: 30px;
 }
 
 .file-upload-button {
@@ -236,7 +237,7 @@ h1 {
     background-color: white;
     padding: 5px;
     border: 1px solid gray;
-    margin: 40px 10px;
+    margin: 10px 10px 40px 10px;
     border-radius: 20px;
     box-shadow: 2px 2px;
 }
