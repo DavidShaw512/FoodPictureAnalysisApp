@@ -106,7 +106,7 @@ const imageUploadModule = (function() {
                     <h1 class="main-logo">Foodie</h1>
                 </header>
             
-                <p  class="header-paragraphs">Welcome to Foodie! Use this app to find exciting new recipes you can make using the food you've got! Just upload a 
+                <p  class="body-paragraphs">Welcome to Foodie! Use this app to find exciting new recipes you can make using the food you've got! Just upload a 
                 picture of your ingredients, and the app will identify and list them. You can manually refine the list if you need to, then 
                 submit that list of ingredients to recieve some great recipes that include them!</p>
                 <form id="image-upload-form" role="form">

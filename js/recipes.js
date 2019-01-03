@@ -47,6 +47,11 @@ const recipesModule = (function() {
     function renderRecipesPage(state) {
         const recipeList = _renderRecipeList(state.recipes)
         const recipesPageContent = `
+            <div class="nav" role="navigation">
+                <h2 class="nav-logo">Foodie</h2>
+                <div class="nav-restart-button">&#171; Restart</div>
+            </div>
+            <h1 class="header">Recipes</h1>
             <div class="recipe-results" id="recipe-results">
                 ${recipeList}
             </div>

@@ -60,6 +60,14 @@ const ingredientsModule = (function() {
         })
     }
 
+    // Toggle the visibility of the 'add ingredients' text field
+    function _handleToggleAddIngredient() {
+        $('#toggle-add-ingredient').click(function(event) {
+            event.preventDefault();
+            $('#add-ingredients-form').toggleClass('hidden');
+        })
+    }
+
     // Add a new ingredient to the list on the page and to the STORE
     function _handleAddIngredient(state) {
         $('#add-ingredient-button').click(function(event) {
@@ -86,19 +94,28 @@ const ingredientsModule = (function() {
     function renderIngredientsPage(state) {
         const ingredientList = _renderIngredientList(state.ingredients/* apiFetch.ingredients */)
         const ingredientsPageContent = `
-            <p class="header-paragraphs">Is this what was in your picture? If we got it wrong, you can add or delete items...</p>
-            ${ingredientList}
-            <form role="form">
-                <input type="text" name="add-ingredient" id="add-ingredient" class="add-ingredient-field" val="Missed any? Add them here!">
-                <input type="submit" name="add-ingredient-button" id="add-ingredient-button" class="add-ingredient-button" val="Add ingredient">
-            </form>
-            <button class="confirm-ingredients-button" id="confirm-ingredients-button">Get some recipes!</button>
+            <div class="nav" role="navigation">
+                <h2 class="nav-logo">Foodie</h2>
+                <div class="nav-restart-button">&#171; Restart</div>
+            </div>
+            <div class="page-container">
+                <h1 class="header">Ingredients</h1>
+                <p class="body-paragraphs">Is this what was in your picture? If we got it wrong, you may use this page to add or delete ingredients.</p>
+                ${ingredientList}
+                <form role="form" id="add-ingredients-form" class="add-ingredients-form hidden">
+                    <input type="text" name="add-ingredient" id="add-ingredient" class="add-ingredient-field" val="Missed any? Add them here!">
+                    <input type="submit" name="add-ingredient-button" id="add-ingredient-button" class="add-ingredient-button" val="Add ingredient">
+                </form>
+                <button class="toggle-add-ingredient" id="toggle-add-ingredient">Add Ingredients</button><br>
+                <button class="confirm-ingredients-button" id="confirm-ingredients-button">Get some recipes!</button>
+            </div>
             `;
             
         const ingredientsPage = commonModule.renderLayout(ingredientsPageContent);
         $('#root').append(ingredientsPage);
         _handleConfirmIngredients(state);
         _handleRemoveIngredient(state);
+        _handleToggleAddIngredient();
         _handleAddIngredient(state);
     }
 
