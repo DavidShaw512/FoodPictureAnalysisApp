@@ -22,9 +22,9 @@ const ingredientsModule = (function() {
     function _renderIngredientList(ingredientList) {
         const ingredients = ingredientList.map(_renderIngredient);
         return `
-            <div class="predictions-box" id="predictions-box">
+            <section class="predictions-box" id="predictions-box" role="region">
                 ${ingredients.join("")}
-            </div>
+            </section>
             `;
     }
     
@@ -40,9 +40,6 @@ const ingredientsModule = (function() {
                     state.currentPage = "recipes";
                     render(state);
                 });
-            // console.log(edamamAPI);
-            // state.currentPage = "recipes";
-            // render(state);
         });
     }
 
@@ -74,12 +71,15 @@ const ingredientsModule = (function() {
             event.preventDefault();
             const newIngredient = $('#add-ingredient').val();
             state.ingredients.push(newIngredient);
-            // const newIngredientItem = `
-            // <div class="ingredient"><p class="ingredient-label">${newIngredient}</p><button class="delete-button">X</button>
-            // </div>
-            // `;
-            // $('#predictions-box').append(newIngredientItem);
             _render(state);
+        })
+    }
+
+    function _handleNavRestart() {
+        $('#nav-restart-button').click(function(event) {
+            event.preventDefault();
+            window.location.href = '';
+            render();
         })
     }
 
@@ -95,8 +95,8 @@ const ingredientsModule = (function() {
         const ingredientList = _renderIngredientList(state.ingredients/* apiFetch.ingredients */)
         const ingredientsPageContent = `
             <div class="nav" role="navigation">
-                <h2 class="nav-logo">Foodie</h2>
-                <div class="nav-restart-button">&#171; Restart</div>
+                <p class="nav-logo">Foodie</p>
+                <div class="nav-restart-button" id="nav-restart-button">&#171; Restart</div>
             </div>
             <div class="page-container">
                 <h1 class="header">Ingredients</h1>
@@ -117,6 +117,7 @@ const ingredientsModule = (function() {
         _handleRemoveIngredient(state);
         _handleToggleAddIngredient();
         _handleAddIngredient(state);
+        _handleNavRestart();
     }
 
     return {

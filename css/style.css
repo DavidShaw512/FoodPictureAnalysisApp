@@ -3,9 +3,10 @@
 }
 
 body {
+	margin: 0px;
 	font-family: 'Open Sans', sans-serif;
-    font-size: 30px;
-	background-color: #d8ffd7;
+    font-size: 18px;
+	background-color: #b4f980;
 	color: #00690e;
 	padding-top: 0px;
 	margin-top: 0px;
@@ -20,12 +21,12 @@ body {
 
 .hidden {
 	display: none;
-	transition: 0.3s;
+	transition: 0.1s;
 }
 
 h1 {
 	font-size: 50px;
-	font-family: 'Thasadith', 'Open Sans', sans-serif;
+	font-family: 'Coiny', 'Open Sans', sans-serif;
 }
 
 .page-container {
@@ -36,15 +37,15 @@ h1 {
 .banner{
 	color: #00690e;
 	padding-top: 100px;
-	font-family: 'Thasadith', 'Open Sans', sans-serif;
+	font-family: 'Coiny', 'Open Sans', sans-serif;
 }
 
 .main-logo {
-	background-color: #9cf7aa;
+	background-color: #4080E5;
     padding: 50px;
     border-radius: 100%;
-    border: 10px solid green;
     font-size: 140px;
+    color: #9cf7aa;
 }
 
 .header {
@@ -55,7 +56,7 @@ h1 {
 
 .body-paragraphs {
 	color: #00690e;
-	font-size: 30px;
+	font-size: 25px;
 	padding: 30px;
 }
 
@@ -65,14 +66,14 @@ h1 {
 	font-weight: 600;
 	border: none;
 	color: white;
-	background-color: #1f3b9c;
+	background-color: #2b942e;
 	margin: 10px auto;
 	cursor: pointer;
 	border-radius: 25px;
 }
 
 .file-input {
-	background-color: #1f3b9c;
+	background-color: #2b942e;
     color: white;
     font-size: 30px;
     padding: 20px;
@@ -85,18 +86,17 @@ h1 {
 	font-weight: 600;
 	border: none;
 	color: white;
-	background-color: #1f3b9c;
+	background-color: #2b942e;
 	margin: 20px auto;
 	cursor: pointer;
 	border-radius: 30px;
 	position: relative;
 	top: 1px;
-	box-shadow: 10px 10px black;
 }
 
 .submit-button:hover {
-	background-color: rgb(55, 0, 255);
-	transition: 0.3s;
+	background-color: rgb(98, 150, 50);
+	transition: 0.1s;
 }
 
 .nav {
@@ -107,23 +107,24 @@ h1 {
 }
 
 .nav-logo {
-	font-family: 'Thasadith', 'Open Sans', sans-serif;
-	display: inline-block;
-	padding: 20px;
-	margin: 20px;
-	background-color: #8bec92;
-	border-radius: 100%;
-	border: 3px solid green;
+	font-family: 'Coiny', 'Open Sans', sans-serif;
+    display: inline-block;
+    padding: 15px;
+    margin: 15px;
+    background-color: #8bec92;
+    border-radius: 100%;
+    border: 3px solid green;
+    font-size: 40px;
 }
 
 .nav-restart-button {
 	float: right;
     font-size: 30px;
     padding: 20px;
-    margin: 30px;
+    margin: 19px;
     cursor: pointer;
     color: white;
-    background-color: rgb(31, 59, 156);
+    background-color: #2b942e;
     border-radius: 20px;
 }
 
@@ -141,9 +142,9 @@ h1 {
 
 .ingredient {
 	font-size: 45px;
-	padding: 10px;
-	margin: 20px;
-	background-color: #9cf7aa;
+    padding: 10px;
+    margin: 20px;
+	background-color: #FFD283;
 }
 
 .ingredient-label {
@@ -151,7 +152,7 @@ h1 {
 }
 
 .delete-button {
-	background-color: #FF5722;
+	background-color: #FA80A3;
     font-size: 45px;
     color: white;
     cursor: pointer;
@@ -164,17 +165,13 @@ h1 {
     left: 14px;
 }
 
-.ingredient:hover {
-	border-left: 10px solid black;
-}
-
 .delete-button:hover {
-	border: 2px solid black;
-	margin: 0px;
+	background-color: #F53068;
+	transition: 0.1s;
 }
 
 .toggle-add-ingredient {
-	background-color: #1f3b9c;
+	background-color: #2b942e;
 	padding: 10px 100px;
 	cursor: pointer;
 	font-weight: 600;
@@ -184,17 +181,22 @@ h1 {
 	margin: 10px auto 20px auto;
 }
 
+.toggle-add-ingredient:hover {
+	background-color: rgb(98, 150, 50);
+	transition: 0.1s;
+}
+
 .add-ingredient-field {
 	height: 60px;
 	font-size: 40px;
 }
 
 .add-ingredients-form {
-	transition: 0.3s;
+	transition: 0.1s;
 }
 
 .add-ingredient-button {
-	background-color: #1f3b9c;
+	background-color: #2b942e;
 	padding: 10px;
 	cursor: pointer;
 	font-weight: 600;
@@ -206,8 +208,8 @@ h1 {
 }
 
 .add-ingredient-button:hover {
-	background-color: rgb(55, 0, 255);
-	transition: 0.3s;
+	background-color: rgb(98, 150, 50);
+	transition: 0.1s;
 }
 
 .confirm-ingredients-button {
@@ -217,15 +219,15 @@ h1 {
 	font-weight: 600;
 	border: none;
 	color: white;
-	background-color: #1f3b9c;
+	background-color: #2b942e;
 	margin: 100px auto;
 	cursor: pointer;
 	border-radius: 30px;
 }
 
 .confirm-ingredients-button:hover {
-	background-color: rgb(55, 0, 255);
-	transition: 0.3s;
+	background-color: rgb(98, 150, 50);
+	transition: 0.1s;
 }
 
 .recipe-results {
@@ -234,46 +236,62 @@ h1 {
 
 .recipe-card {
 	text-align: left;
-    background-color: white;
-    padding: 5px;
-    border: 1px solid gray;
-    margin: 10px 10px 40px 10px;
-    border-radius: 20px;
-    box-shadow: 2px 2px;
+	background-color: white;
+	margin-bottom: 50px;
+}
+
+.recipe-card > h2 {
+	font-size: 30px;
+	padding: 0px 40px;
+}
+
+.card-ingredient-list {
+	padding: 0px 70px;
+}
+
+.card-ingredient-list > h3 {
+	font-size: 25px;
+	padding: 10px 30px;
+}
+
+.card-ingredient-list > ul > li{
+	padding: 8px;
+	font-size: 18px;
+}
+
+.card-actions {
+	padding: 25px 90px 50px 90px;
+    text-align: center;
 }
 
 .recipe-name {
-	font-size: 25px;
-	font-weight: 600;
-	text-decoration: underline;
-	margin-top: 5px;
-	color: black;
+	font-size: 36px;
+    font-weight: 600;
+    margin-top: 5px;
+    color: black;
+    padding: 0px 15px;
 }
 
 .recipe-image {
-	width: 110px;
-    height: 110px;
-    padding: 0 5px;
-    position: relative;
-    right: 2px;
+	width: 100%;
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .recipe-link-button {
 	border: none;
-    padding: 10px;
+    padding: 25px 90px;
     color: white;
-    background-color: #1f3b9c;
-    text-decoration: underline;
-	font-size: 40px;
-	border-radius: 10px;
-    position: relative;
-    top: -50px;
-	left: 20px;
+    background-color: #119e00;
+    font-size: 50px;
+    border-radius: 10px;
 }
 
 .recipe-link-button:hover {
 	cursor: pointer;
-	background-color: rgb(55, 0, 255);
+	background-color: #2b942e;
 }
 
 .retry-button {
@@ -289,6 +307,6 @@ h1 {
 }
 
 .retry-button:hover {
-	background-color: rgb(55, 0, 255);
-	transition: 0.3s;
+	background-color: #2b942e;
+	transition: 0.1s;
 }
