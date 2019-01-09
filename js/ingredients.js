@@ -1,11 +1,5 @@
-// From stub page, pre-modulated::::::::::::::::::::::::::::::::::::::::::::::::
-// click delete button, find index of item, use the index to delete it from the store
-// Get edamam searching for live ingredients
-// Get state working instead of STORE on the ingredient deletion/addition (one is finished, the other will look the same)
-// Start thinking about design
-
 const ingredientsModule = (function() {
-    // Private (private stuff gets underscore, you need to change references accordingly)
+    // Private
 
     let _render = false;
 
