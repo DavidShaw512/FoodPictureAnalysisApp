@@ -6,8 +6,8 @@ body {
 	margin: 0px;
 	font-family: 'Open Sans', sans-serif;
     font-size: 18px;
-	background-color: #b4f980;
-	color: #00690e;
+	background-color: #a6e8c5;
+	color: #346b3b;
 	padding-top: 0px;
 	margin-top: 0px;
 	text-align: center;
@@ -26,38 +26,45 @@ body {
 
 h1 {
 	font-size: 50px;
-	font-family: 'Coiny', 'Open Sans', sans-serif;
+	font-family: 'Fredoka One', 'Open Sans', sans-serif;
 }
 
 .page-container {
 	max-width: 900px;
 	margin: 0 auto;
+	overflow-y: auto;
 }
 
 .banner{
 	color: #00690e;
 	padding-top: 100px;
-	font-family: 'Coiny', 'Open Sans', sans-serif;
+	font-family: 'Fredoka One', 'Open Sans', sans-serif;
 }
 
 .main-logo {
-	background-color: #4080E5;
-    padding: 50px;
+	background-color: #3cbd76;
+	padding: 50px;
+	margin-left: 20px;
+    margin-right: 20px;
     border-radius: 100%;
-    font-size: 140px;
-    color: #9cf7aa;
+    font-size: 90px;
+    color: #A6E8C5;
 }
 
 .header {
-	padding-top: 40px;
+	padding-top: 100px;
 	font-size: 80px;
-	margin-bottom: 20px;
+	margin-top: 0px;
+    margin-bottom: 20px;
+    color: #32af6a;
 }
 
 .body-paragraphs {
-	color: #00690e;
-	font-size: 25px;
-	padding: 30px;
+	color: #346b3b;
+    font-size: 28px;
+    padding: 30px;
+    padding-bottom: 0px;
+    padding-top: 0px;
 }
 
 .file-upload-button {
@@ -73,30 +80,35 @@ h1 {
 }
 
 .file-input {
-	background-color: #2b942e;
-    color: white;
-    font-size: 30px;
+	background-color: #3cbd76;
+    color: #a6e8c5;
+    font-size: 40px;
     padding: 20px;
-	max-width: 100%;
+    max-width: 80%;
+}
+
+.button-common {
+	border: none;
+	border-radius: 55px;
+	color: #ffffff;
+    background-color: #32af6a;
+	margin: 20px auto;
+	cursor: pointer;
+	font-family: 'Montserrat';
+	transition: 0.2s;
 }
 
 .submit-button {
 	padding: 20px 50px;
 	font-size: 60px;
 	font-weight: 600;
-	border: none;
-	color: white;
-	background-color: #2b942e;
-	margin: 20px auto;
-	cursor: pointer;
-	border-radius: 30px;
 	position: relative;
 	top: 1px;
 }
 
-.submit-button:hover {
-	background-color: rgb(98, 150, 50);
-	transition: 0.1s;
+.button-common:hover {
+	background-color: rgb(53, 150, 101);
+	transition: 0.2s;
 }
 
 .nav {
@@ -107,25 +119,27 @@ h1 {
 }
 
 .nav-logo {
-	font-family: 'Coiny', 'Open Sans', sans-serif;
+	font-family: 'Fredoka One', 'Open Sans', sans-serif;
     display: inline-block;
     padding: 15px;
     margin: 15px;
-    background-color: #8bec92;
+    background-color: #32af6a;
+    color: white;
     border-radius: 100%;
-    border: 3px solid green;
-    font-size: 40px;
+    font-size: 50px;
 }
 
 .nav-restart-button {
 	float: right;
-    font-size: 30px;
+    font-size: 40px;
     padding: 20px;
-    margin: 19px;
+    margin: 15px;
     cursor: pointer;
     color: white;
-    background-color: #2b942e;
-    border-radius: 20px;
+    background-color: #585BCA;
+    border-radius: 55px;
+	font-family: 'Montserrat';
+	transition: 0.15s;
 }
 
 .nav-restart-button:hover {
@@ -144,7 +158,8 @@ h1 {
 	font-size: 45px;
     padding: 10px;
     margin: 20px;
-	background-color: #FFD283;
+	background-color: #ffffff;
+	box-shadow: 2px 2px 10px #00000069;
 }
 
 .ingredient-label {
@@ -162,7 +177,8 @@ h1 {
     padding: 15px;
     position: relative;
     top: -12px;
-    left: 14px;
+	left: 14px;
+	transition: 0.1s;
 }
 
 .delete-button:hover {
@@ -171,19 +187,23 @@ h1 {
 }
 
 .toggle-add-ingredient {
-	background-color: #2b942e;
-	padding: 10px 100px;
-	cursor: pointer;
-	font-weight: 600;
-	font-size: 40px;
+	background-color: #ffffff;
+    padding: 10px 100px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 40px;
 	border: none;
-	color: white;
-	margin: 10px auto 20px auto;
+	border-radius: 55px;
+    color: #32af6a;
+	margin: 0px auto 80px auto;
+	transition: 0.2s;
 }
 
 .toggle-add-ingredient:hover {
-	background-color: rgb(98, 150, 50);
-	transition: 0.1s;
+	padding-left: 130px;
+    padding-right: 130px;
+	transition: 0.2s;
+	background-color: #ffffff;
 }
 
 .add-ingredient-field {
@@ -196,38 +216,17 @@ h1 {
 }
 
 .add-ingredient-button {
-	background-color: #2b942e;
-	padding: 10px;
-	cursor: pointer;
-	font-weight: 600;
-	font-size: 35px;
-	border: none;
-	color: white;
-	margin: 10px auto;
-	border-radius: 20px;
-}
-
-.add-ingredient-button:hover {
-	background-color: rgb(98, 150, 50);
-	transition: 0.1s;
+	padding: 10px 30px;
+    font-weight: 600;
+    font-size: 35px;
+    margin-top: 0px;
 }
 
 .confirm-ingredients-button {
-	padding: 20px 40px;
+	padding: 20px 70px;
 	max-width: 80%;
 	font-size: 60px;
 	font-weight: 600;
-	border: none;
-	color: white;
-	background-color: #2b942e;
-	margin: 100px auto;
-	cursor: pointer;
-	border-radius: 30px;
-}
-
-.confirm-ingredients-button:hover {
-	background-color: rgb(98, 150, 50);
-	transition: 0.1s;
 }
 
 .recipe-results {
@@ -236,8 +235,9 @@ h1 {
 
 .recipe-card {
 	text-align: left;
-	background-color: white;
-	margin-bottom: 50px;
+    background-color: white;
+    margin-bottom: 50px;
+    box-shadow: 2px 2px 15px #00000069;
 }
 
 .recipe-card > h2 {
@@ -269,7 +269,8 @@ h1 {
     font-weight: 600;
     margin-top: 5px;
     color: black;
-    padding: 0px 15px;
+	padding: 0px 20px;
+    font-family: 'Montserrat';
 }
 
 .recipe-image {
@@ -277,36 +278,33 @@ h1 {
     height: 500px;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+	background-size: cover;
+	transition: 0.5s;
+}
+
+.recipe-image:hover {
+	background-position: top;
+	transition: 0.5s
 }
 
 .recipe-link-button {
-	border: none;
-    padding: 25px 90px;
-    color: white;
-    background-color: #119e00;
-    font-size: 50px;
-    border-radius: 10px;
-}
-
-.recipe-link-button:hover {
-	cursor: pointer;
-	background-color: #2b942e;
+    padding: 25px 80px;
+	font-size: 50px;
+	font-weight: 600;
 }
 
 .retry-button {
-	padding: 20px 30px;
+	padding: 20px 60px;
 	font-size: 45px;
 	font-weight: 600;
-	border: none;
-	color: white;
-	background-color: #1f3b9c;
-	margin: 10px auto;
-	cursor: pointer;
-	border-radius: 30px;
 }
 
-.retry-button:hover {
-	background-color: #2b942e;
-	transition: 0.1s;
+@media only screen and (min-width: 600px) {
+	.banner {
+		padding-top: 0px;
+	}
+
+	.main-logo {
+		font-size: 140px;
+	}
 }

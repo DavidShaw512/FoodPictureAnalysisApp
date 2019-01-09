@@ -25,7 +25,7 @@ const recipesModule = (function() {
                     </ul>
                 </div>
                 <div class="card-actions">
-                    <a href="${recipe.shareAs}" target="_blank"><button class="recipe-link-button">Get the recipe!</button></a>
+                    <a href="${recipe.shareAs}" target="_blank"><button class="recipe-link-button button-common">Get the recipe!</button></a>
                 </div>
             </div>
             `;
@@ -76,7 +76,7 @@ const recipesModule = (function() {
                 <section class="recipe-results" id="recipe-results" role="region">
                     ${recipeList}
                 </section>
-                <button class="retry-button" id="retry-button">Retry?</button>
+                <button class="retry-button button-common" id="retry-button">Retry?</button>
             </div>
             `;
     

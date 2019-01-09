@@ -104,10 +104,10 @@ const ingredientsModule = (function() {
                 ${ingredientList}
                 <form role="form" id="add-ingredients-form" class="add-ingredients-form hidden">
                     <input type="text" name="add-ingredient" id="add-ingredient" class="add-ingredient-field" val="Missed any? Add them here!">
-                    <input type="submit" name="add-ingredient-button" id="add-ingredient-button" class="add-ingredient-button" val="Add ingredient">
+                    <input type="submit" name="add-ingredient-button" id="add-ingredient-button" class="add-ingredient-button button-common" val="Add ingredient">
                 </form>
-                <button class="toggle-add-ingredient" id="toggle-add-ingredient">Add Ingredients</button><br>
-                <button class="confirm-ingredients-button" id="confirm-ingredients-button">Get some recipes!</button>
+                <button class="toggle-add-ingredient button-common" id="toggle-add-ingredient">Add Ingredients</button><br>
+                <button class="confirm-ingredients-button button-common" id="confirm-ingredients-button">Get some recipes!</button>
             </div>
             `;
             

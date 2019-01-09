@@ -51,7 +51,7 @@ const imageUploadModule = (function() {
                 picture of your ingredients!</p>
                 <form id="image-upload-form" role="form">
                     <input type="file" id="file" accept="image/*" value="Browse Files" class="file-input"><br>
-                    <input type="submit" value="Go!" class="submit-button">
+                    <input type="submit" value="Go!" class="submit-button button-common">
                 </form>
             </div>
             `;
