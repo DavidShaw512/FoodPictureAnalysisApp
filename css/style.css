@@ -1,0 +1,314 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0px;
+	font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+	background-color: #a6e8c5;
+	color: #346b3b;
+	padding-top: 0px;
+	margin-top: 0px;
+	text-align: center;
+    /* background-image: url(file:///C:/Users/David/git-projects/asyncWebAppsProjects/apiCapstoneFoodProject/food-background-light.jpg); */
+    /* opacity: .2; */
+    /* background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover; */
+}
+
+body.waiting * {
+	cursor: progress;
+}
+
+.hidden {
+	display: none;
+	transition: 0.1s;
+}
+
+h1 {
+	font-size: 50px;
+	font-family: 'Fredoka One', 'Open Sans', sans-serif;
+}
+
+.page-container {
+	max-width: 900px;
+	margin: 0 auto;
+	overflow-y: auto;
+}
+
+.banner{
+	color: #00690e;
+	padding-top: 100px;
+	font-family: 'Fredoka One', 'Open Sans', sans-serif;
+}
+
+.main-logo {
+	background-color: #3cbd76;
+	padding: 50px;
+	margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 100%;
+    font-size: 90px;
+    color: rgb(255, 255, 255);
+}
+
+.header {
+	padding-top: 100px;
+	font-size: 80px;
+	margin-top: 0px;
+    margin-bottom: 20px;
+    color: #32af6a;
+}
+
+.body-paragraphs {
+	color: #346b3b;
+    font-size: 28px;
+    padding: 30px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.file-upload-button {
+	padding: 20px;
+	font-size: 20px;
+	font-weight: 600;
+	border: none;
+	color: white;
+	background-color: #2b942e;
+	margin: 10px auto;
+	cursor: pointer;
+	border-radius: 25px;
+}
+
+.file-input {
+	background-color: #3cbd76;
+    color: #a6e8c5;
+    font-size: 40px;
+    padding: 20px;
+    max-width: 80%;
+}
+
+.button-common {
+	border: none;
+	border-radius: 55px;
+	color: #ffffff;
+    background-color: #32af6a;
+	margin: 20px auto;
+	cursor: pointer;
+	font-family: 'Montserrat';
+	transition: 0.2s;
+}
+
+.submit-button {
+	padding: 20px 50px;
+	font-size: 60px;
+	font-weight: 600;
+	position: relative;
+	top: 1px;
+}
+
+.button-common:hover {
+	background-color: rgb(53, 150, 101);
+	transition: 0.2s;
+}
+
+.nav {
+	background-color: white;
+	width: 100%;
+	display: block;
+	text-align: left;
+}
+
+.nav-logo {
+	font-family: 'Fredoka One', 'Open Sans', sans-serif;
+    display: inline-block;
+    padding: 15px;
+    margin: 15px;
+    background-color: #32af6a;
+    color: white;
+    border-radius: 100%;
+    font-size: 50px;
+}
+
+.nav-restart-button {
+	float: right;
+    font-size: 40px;
+    padding: 20px;
+    margin: 15px;
+    cursor: pointer;
+    color: white;
+    background-color: #585BCA;
+    border-radius: 55px;
+	font-family: 'Montserrat';
+	transition: 0.15s;
+}
+
+.nav-restart-button:hover {
+	margin-left: 15px;
+	margin-right: 25px;
+	transition: 0.15s;
+}
+
+.predictions-box {
+	text-align: left;
+	padding: 5px;
+	margin: 5px;
+}
+
+.ingredient {
+	font-size: 45px;
+    padding: 10px;
+    margin: 20px;
+	background-color: #ffffff;
+	box-shadow: 2px 2px 10px #00000069;
+}
+
+.ingredient-label {
+	display: inline;
+}
+
+.delete-button {
+	background-color: #FA80A3;
+    font-size: 45px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    float: right;
+    margin: 2px;
+    padding: 15px;
+    position: relative;
+    top: -12px;
+	left: 14px;
+	transition: 0.1s;
+}
+
+.delete-button:hover {
+	background-color: #F53068;
+	transition: 0.1s;
+}
+
+.toggle-add-ingredient {
+	background-color: #ffffff;
+    padding: 10px 100px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 40px;
+	border: none;
+	border-radius: 55px;
+    color: #32af6a;
+	margin: 0px auto 80px auto;
+	transition: 0.2s;
+}
+
+.toggle-add-ingredient:hover {
+	padding-left: 130px;
+    padding-right: 130px;
+	transition: 0.2s;
+	background-color: #ffffff;
+}
+
+.add-ingredient-field {
+	height: 60px;
+	font-size: 40px;
+}
+
+.add-ingredients-form {
+	transition: 0.1s;
+}
+
+.add-ingredient-button {
+	padding: 10px 30px;
+    font-weight: 600;
+    font-size: 35px;
+    margin-top: 0px;
+}
+
+.confirm-ingredients-button {
+	padding: 20px 70px;
+	max-width: 80%;
+	font-size: 60px;
+	font-weight: 600;
+}
+
+.recipe-results {
+	padding: 20px 50px;
+}
+
+.recipe-card {
+	text-align: left;
+    background-color: white;
+    margin-bottom: 50px;
+    box-shadow: 2px 2px 15px #00000069;
+}
+
+.recipe-card > h2 {
+	font-size: 30px;
+	padding: 0px 40px;
+}
+
+.card-ingredient-list {
+	padding: 0px 70px;
+}
+
+.card-ingredient-list > h3 {
+	font-size: 25px;
+	padding: 10px 30px;
+}
+
+.card-ingredient-list > ul > li{
+	padding: 8px;
+	font-size: 18px;
+}
+
+.card-actions {
+	padding: 25px 90px 50px 90px;
+    text-align: center;
+}
+
+.recipe-name {
+	font-size: 36px;
+    font-weight: 600;
+    margin-top: 5px;
+    color: black;
+	padding: 0px 20px;
+    font-family: 'Montserrat';
+}
+
+.recipe-image {
+	width: 100%;
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+	background-size: cover;
+	transition: 0.5s;
+}
+
+.recipe-image:hover {
+	background-position: top;
+	transition: 0.5s
+}
+
+.recipe-link-button {
+    padding: 25px 80px;
+	font-size: 50px;
+	font-weight: 600;
+}
+
+.retry-button {
+	padding: 20px 60px;
+	font-size: 45px;
+	font-weight: 600;
+}
+
+@media only screen and (min-width: 600px) {
+	.banner {
+		padding-top: 0px;
+	}
+
+	.main-logo {
+		font-size: 140px;
+	}
+}
