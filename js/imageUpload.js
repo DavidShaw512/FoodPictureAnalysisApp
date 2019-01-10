@@ -48,7 +48,7 @@ const imageUploadModule = (function() {
                     <h1 class="main-logo">Foodie</h1>
                 </header>
             
-                <p  class="body-paragraphs">Find exciting new recipes you can make using the food you've got. Just upload a 
+                <p  class="body-paragraphs">Get inspired by exciting new recipes based on the food you've got. Just upload a 
                 picture of your ingredients!</p>
                 <form id="image-upload-form" role="form">
                     <input type="file" id="file" accept="image/*" value="Browse Files" class="file-input"><br>
