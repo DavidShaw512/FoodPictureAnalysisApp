@@ -80,6 +80,7 @@ const clarifaiAPI = (function() {
       .then(extractIngredients)
       .catch(err => {
         console.log(err);
+        alert('Uh-oh, bad request. Reload the page and try again!');
       });
   }
   

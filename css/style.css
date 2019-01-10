@@ -300,6 +300,10 @@ h1 {
 	font-weight: 600;
 }
 
+.no-recipes-message {
+	font-size: 40px;
+}
+
 .retry-button {
 	padding: 20px 60px;
 	font-size: 45px;
@@ -308,7 +312,7 @@ h1 {
 
 @media only screen and (min-width: 600px) {
 	.banner {
-		padding-top: 0px;
+		padding-top: 50px;
 	}
 
 	.main-logo {
