@@ -36,7 +36,6 @@ h1 {
 .page-container {
 	max-width: 900px;
 	margin: 0 auto;
-	overflow-y: auto;
 }
 
 .banner{
@@ -47,9 +46,9 @@ h1 {
 
 .main-logo {
 	background-color: #3cbd76;
-	padding: 50px;
-	margin-left: 20px;
-    margin-right: 20px;
+    padding: 50px;
+    margin-left: 90px;
+    margin-right: 90px;
     border-radius: 100%;
     font-size: 90px;
     color: rgb(255, 255, 255);
@@ -89,6 +88,8 @@ h1 {
     font-size: 40px;
     padding: 20px;
     max-width: 80%;
+    margin-top: 30px;
+    margin-bottom: 40px;
 }
 
 .button-common {
@@ -103,7 +104,7 @@ h1 {
 }
 
 .submit-button {
-	padding: 20px 50px;
+	padding: 20px 80px;
 	font-size: 60px;
 	font-weight: 600;
 	position: relative;
@@ -135,7 +136,8 @@ h1 {
 
 .nav-restart-button {
 	float: right;
-    font-size: 40px;
+	font-size: 40px;
+	font-weight: 600;
     padding: 20px;
     margin: 15px;
     cursor: pointer;
