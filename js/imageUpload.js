@@ -9,6 +9,7 @@ const imageUploadModule = (function() {
     function _handleImageSubmit(state) {
         $('.submit-button').click(function(event) {
             event.preventDefault();
+            $('body').addClass('waiting');
             /* Trigger file selection */
             const selectedFile = document.getElementById("file").files[0];
             console.log(selectedFile);

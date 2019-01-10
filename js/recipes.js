@@ -82,6 +82,7 @@ const recipesModule = (function() {
     
         const recipePage = commonModule.renderLayout(recipesPageContent);
         $('#root').append(recipePage);
+        $('body').removeClass('waiting');
         _handleRetry();
         _handleNavRestart();
     }

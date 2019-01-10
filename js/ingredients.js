@@ -25,6 +25,7 @@ const ingredientsModule = (function() {
     function _handleConfirmIngredients(state) {
         $('#confirm-ingredients-button').click(function(event) {
             event.preventDefault();
+            $('body').addClass('waiting');
             /* functionality that deals with sending the ingredients to the Edamam API */
             console.log(edamamAPI);
             console.log(edamamAPI.analyzeIngredients);
@@ -107,6 +108,7 @@ const ingredientsModule = (function() {
             
         const ingredientsPage = commonModule.renderLayout(ingredientsPageContent);
         $('#root').append(ingredientsPage);
+        $('body').removeClass('waiting');
         _handleConfirmIngredients(state);
         _handleRemoveIngredient(state);
         _handleToggleAddIngredient();
