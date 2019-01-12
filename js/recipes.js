@@ -69,7 +69,7 @@ const recipesModule = (function() {
         const recipesPageContent = `
             <nav class="nav" role="navigation">
                 <h2 class="nav-logo">Foodie</h2>
-                <div class="nav-restart-button" id="nav-restart-button">&#171; Restart</div>
+                <div class="nav-restart-button" id="nav-restart-button"><span class="fas fa-undo"></span> Restart</div>
             </nav>
             <div class="page-container">
                 <h1 class="header">Recipes</h1>

@@ -45,7 +45,9 @@ const imageUploadModule = (function() {
         const landingPageContent = `
             <div class="page-container">
                 <header role="banner" class="banner">
-                    <h1 class="main-logo">Foodie</h1>
+                    <h1>
+                        <img src="file:///C:/Users/David/git-projects/asyncWebAppsProjects/apiCapstoneFoodProject/Foodie-logo-new.png" alt="Foodie logo" class="main-logo">
+                    </h1>
                 </header>
             
                 <p  class="body-paragraphs">Get inspired by exciting new recipes based on the food you've got. Just upload a 

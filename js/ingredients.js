@@ -8,7 +8,13 @@ const ingredientsModule = (function() {
     function _renderIngredient(ingredient, index) {
         console.log(index, ingredient);
         return `
-            <div class="ingredient" data-index=${index}><p class="ingredient-label">${ingredient}</p><button class="delete-button">X</button>
+            <div class="ingredient" data-index=${index}>
+                <p class="ingredient-label">
+                    ${ingredient}
+                </p>
+                <button class="delete-button">
+                    <span class="fas fa-times"></span>
+                </button>
             </div>
             `;
     }
@@ -91,15 +97,17 @@ const ingredientsModule = (function() {
         const ingredientsPageContent = `
             <div class="nav" role="navigation">
                 <p class="nav-logo">Foodie</p>
-                <div class="nav-restart-button" id="nav-restart-button">&#171; Restart</div>
+                <div class="nav-restart-button" id="nav-restart-button"><span class="fas fa-undo"></span> Restart</div>
             </div>
             <div class="page-container">
                 <h1 class="header">Ingredients</h1>
                 <p class="body-paragraphs">Is this what was in your picture? If we got it wrong, you may use this page to add or delete ingredients.</p>
                 ${ingredientList}
                 <form role="form" id="add-ingredients-form" class="add-ingredients-form hidden">
-                    <input type="text" name="add-ingredient" id="add-ingredient" class="add-ingredient-field" val="Missed any? Add them here!">
-                    <input type="submit" name="add-ingredient-button" id="add-ingredient-button" class="add-ingredient-button button-common" val="Add ingredient">
+                    <input type="text" name="add-ingredient" id="add-ingredient" class="add-ingredient-field" placeholder="Add another ingredient">
+                    <button type="submit" name="add-ingredient-button" id="add-ingredient-button" class="add-ingredient-button button-common">
+                        <span class="fas fa-check"></span>
+                    </button>
                 </form>
                 <button class="toggle-add-ingredient button-common" id="toggle-add-ingredient">Add Ingredients</button><br>
                 <button class="confirm-ingredients-button button-common" id="confirm-ingredients-button">Get some recipes!</button>
