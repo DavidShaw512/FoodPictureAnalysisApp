@@ -13,8 +13,11 @@ const imageUploadModule = (function() {
     }
     
     function _handleFileUploadEvent() {
-        $('#file').change(function() {
+        $('#file').change(function(f) {
             $('#submit-button').removeClass('hidden');
+            let fileName = f.target.files[0].name;
+            console.log(fileName);
+            $('#file-name-display').append(`File selected: ${fileName}`)
         })
     }
     
@@ -63,6 +66,7 @@ const imageUploadModule = (function() {
                 picture of your ingredients!</p>
                 <p class="body-paragraphs"><strong>First, upload a picture here:</strong></p>
                 <button class="upload-icon" id="upload-icon"><span class="fas fa-camera"></span></button>
+                <div class="file-name-display" id="file-name-display"></div>
                 <form id="image-upload-form" role="form">
                     <input type="file" id="file" accept="image/*" value="Browse Files" class="file-input"><br>
                     <input type="submit" value="Go!" id="submit-button" class="hidden submit-button button-common">

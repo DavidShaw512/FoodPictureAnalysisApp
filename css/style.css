@@ -120,11 +120,10 @@ h1 {
 
 .submit-button {
 	padding: 10px 50px;
-	margin-top: -16px;
     font-size: 25px;
     font-weight: 600;
     position: relative;
-    top: 1px;
+    top: -60px;
 }
 
 .nav {

@@ -68,12 +68,14 @@ const ingredientsModule = (function() {
 
     // Add a new ingredient to the list on the page and to the STORE
     function _handleAddIngredient(state) {
-        $('#add-ingredient-button').click(function(event) {
-            event.preventDefault();
-            const newIngredient = $('#add-ingredient').val();
-            state.ingredients.push(newIngredient);
-            _render(state);
-        })
+        if ($('.add-ingredient').val() !== '') {
+            $('#add-ingredient-button').click(function(event) {
+                event.preventDefault();
+                const newIngredient = $('#add-ingredient').val();
+                state.ingredients.push(newIngredient);
+                _render(state);
+            })
+        }
     }
 
     function _handleNavRestart() {
