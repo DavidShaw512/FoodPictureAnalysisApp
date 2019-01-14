@@ -11,12 +11,6 @@ body {
 	padding-top: 0px;
 	margin-top: 0px;
 	text-align: center;
-    /* background-image: url(file:///C:/Users/David/git-projects/asyncWebAppsProjects/apiCapstoneFoodProject/food-background-light.jpg); */
-    /* opacity: .2; */
-    /* background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover; */
 }
 
 body.waiting * {
@@ -66,6 +60,24 @@ h1 {
     padding-top: 0px;
 }
 
+.upload-icon {
+	background-color: white;
+	color: #32af6a;
+	padding: 5px 40px;
+	text-align: center;
+	font-size: 30px;
+	border: solid 5px #32af6a;
+	border-radius: 50px;
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+.upload-icon:hover {
+	background-color: rgb(228, 228, 228);
+	color: #2c9c5f;
+	border: 5px solid #2c9c5f;
+}
+
 .file-upload-button {
 	padding: 20px;
 	font-size: 20px;
@@ -85,7 +97,9 @@ h1 {
     padding: 7px;
     max-width: 80%;
     margin-top: 15px;
-    margin-bottom: 20px;
+	margin-bottom: 20px;
+	position: relative;
+    right: 5000px;
 }
 
 .button-common {
@@ -106,6 +120,7 @@ h1 {
 
 .submit-button {
 	padding: 10px 50px;
+	margin-top: -16px;
     font-size: 25px;
     font-weight: 600;
     position: relative;

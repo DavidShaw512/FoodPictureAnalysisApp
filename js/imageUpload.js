@@ -5,6 +5,18 @@ const imageUploadModule = (function() {
     // Private
 
     let _render = false;
+
+    function _handleUploadClick() {
+        $('#upload-icon').click(function () { // on a click on the button with id 'upload-icon'
+            $('#file').trigger('click');// trigger a click on the real file upload button 
+        })
+    }
+    
+    function _handleFileUploadEvent() {
+        $('#file').change(function() {
+            $('#submit-button').removeClass('hidden');
+        })
+    }
     
     function _handleImageSubmit(state) {
         $('.submit-button').click(function(event) {
@@ -24,12 +36,8 @@ const imageUploadModule = (function() {
                     state.currentPage = 'ingredients';
                     render(state);
                 })
-
             };
             reader.readAsDataURL(selectedFile);
-            /* functionality that deals with sending the picture to the Clarifai API */
-            
-            
         })
     }
 
@@ -46,21 +54,26 @@ const imageUploadModule = (function() {
             <div class="page-container">
                 <header role="banner" class="banner">
                     <h1>
-                        <img src="file:///C:/Users/David/git-projects/asyncWebAppsProjects/apiCapstoneFoodProject/Foodie-logo-new.png" alt="Foodie logo" class="main-logo">
+                        <span class="fas fa-utensils"></span><br>
+                        Foodie
                     </h1>
                 </header>
             
                 <p  class="body-paragraphs">Get inspired by exciting new recipes based on the food you've got. Just upload a 
                 picture of your ingredients!</p>
+                <p class="body-paragraphs"><strong>First, upload a picture here:</strong></p>
+                <button class="upload-icon" id="upload-icon"><span class="fas fa-camera"></span></button>
                 <form id="image-upload-form" role="form">
                     <input type="file" id="file" accept="image/*" value="Browse Files" class="file-input"><br>
-                    <input type="submit" value="Go!" class="submit-button button-common">
+                    <input type="submit" value="Go!" id="submit-button" class="hidden submit-button button-common">
                 </form>
             </div>
             `;
     
         const landingPage = commonModule.renderLayout(landingPageContent);
         $("#root").append(landingPage);
+        _handleUploadClick();
+        _handleFileUploadEvent();
         _handleImageSubmit(state);
     }
     
