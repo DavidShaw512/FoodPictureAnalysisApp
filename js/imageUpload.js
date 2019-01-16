@@ -7,14 +7,21 @@ const imageUploadModule = (function() {
     let _render = false;
 
     function _handleUploadClick() {
-        $('#upload-icon').click(function () { // on a click on the button with id 'upload-icon'
+        $('#upload-button-surrogate').click(function () { // on a click on the button with id 'upload-button-surrogate'
             $('#file').trigger('click');// trigger a click on the real file upload button 
+        })
+    }
+
+    function _handleSubmitClick() {
+        $('#submit-button-surrogate').click(function () { // on a click on the button with id 'submit-button-surrogate'
+            $('#submit-button').trigger('click');// trigger a click on the real submit button 
+
         })
     }
     
     function _handleFileUploadEvent() {
         $('#file').change(function(f) {
-            $('#submit-button').removeClass('hidden');
+            $('#submit-button-surrogate').removeClass('hidden');
             let fileName = f.target.files[0].name;
             console.log(fileName);
             $('#file-name-display').append(`File selected: ${fileName}`)
@@ -24,7 +31,9 @@ const imageUploadModule = (function() {
     function _handleImageSubmit(state) {
         $('.submit-button').click(function(event) {
             event.preventDefault();
-            $('body').addClass('waiting');
+            $(window).scrollTop(0);
+            /* change the text in the 'Go!' button to a spinning carrot icon to indicate loading */
+            $('#submit-button-surrogate').html('<span class="fas fa-carrot loader"></span>');
             /* Trigger file selection */
             const selectedFile = document.getElementById("file").files[0];
             console.log(selectedFile);
@@ -65,8 +74,9 @@ const imageUploadModule = (function() {
                 <p  class="body-paragraphs">Get inspired by exciting new recipes based on the food you've got. Just upload a 
                 picture of your ingredients!</p>
                 <p class="body-paragraphs"><strong>First, upload a picture here:</strong></p>
-                <button class="upload-icon" id="upload-icon"><span class="fas fa-camera"></span></button>
+                <button class="upload-button-surrogate" id="upload-button-surrogate"><span class="fas fa-camera"></span></button>
                 <div class="file-name-display" id="file-name-display"></div>
+                <button class="submit-button-surrogate button-common hidden" id="submit-button-surrogate">Go!</button>
                 <form id="image-upload-form" role="form">
                     <input type="file" id="file" accept="image/*" value="Browse Files" class="file-input"><br>
                     <input type="submit" value="Go!" id="submit-button" class="hidden submit-button button-common">
@@ -77,6 +87,7 @@ const imageUploadModule = (function() {
         const landingPage = commonModule.renderLayout(landingPageContent);
         $("#root").append(landingPage);
         _handleUploadClick();
+        _handleSubmitClick();
         _handleFileUploadEvent();
         _handleImageSubmit(state);
     }

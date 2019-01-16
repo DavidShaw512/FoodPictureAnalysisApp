@@ -1,10 +1,10 @@
-const ingredientsModule = (function() {
+const ingredientsModule = (function () {
     // Private
 
     let _render = false;
 
-    
-    
+
+
     function _renderIngredient(ingredient, index) {
         console.log(index, ingredient);
         return `
@@ -18,7 +18,7 @@ const ingredientsModule = (function() {
             </div>
             `;
     }
-    
+
     function _renderIngredientList(ingredientList) {
         const ingredients = ingredientList.map(_renderIngredient);
         return `
@@ -27,10 +27,16 @@ const ingredientsModule = (function() {
             </section>
             `;
     }
-    
+
     function _handleConfirmIngredients(state) {
-        $('#confirm-ingredients-button').click(function(event) {
+        $('#confirm-ingredients-button').click(function (event) {
             event.preventDefault();
+            /* change the text in the 'Get some recipes' button to a spinning carrot icon to indicate loading */
+            $('#confirm-ingredients-button').html('<span class="fas fa-carrot loader"></span>');
+            $('#confirm-ingredients-button').css({
+                'padding': '15px 105px',
+                'transition': '0s'
+            })
             $('body').addClass('waiting');
             /* functionality that deals with sending the ingredients to the Edamam API */
             console.log(edamamAPI);
@@ -46,7 +52,7 @@ const ingredientsModule = (function() {
 
     // Remove an ingredient from the list on the page and from the STORE
     function _handleRemoveIngredient(state) {
-        $('.delete-button').click(function(event) {
+        $('.delete-button').click(function (event) {
             event.preventDefault();
             console.log($(this).closest('div')[0].dataset.index);
             const index = $(this).closest('div')[0].dataset.index;
@@ -60,16 +66,17 @@ const ingredientsModule = (function() {
 
     // Toggle the visibility of the 'add ingredients' text field
     function _handleToggleAddIngredient() {
-        $('#toggle-add-ingredient').click(function(event) {
+        $('#toggle-add-ingredient').click(function (event) {
             event.preventDefault();
-            $('#add-ingredients-form').toggleClass('hidden');
+            $('#add-ingredients-form').removeClass('hidden');
+            $('#toggle-add-ingredient').addClass('grey-out');
         })
     }
 
     // Add a new ingredient to the list on the page and to the STORE
     function _handleAddIngredient(state) {
         if ($('.add-ingredient').val() !== '') {
-            $('#add-ingredient-button').click(function(event) {
+            $('#add-ingredient-button').click(function (event) {
                 event.preventDefault();
                 const newIngredient = $('#add-ingredient').val();
                 state.ingredients.push(newIngredient);
@@ -79,7 +86,7 @@ const ingredientsModule = (function() {
     }
 
     function _handleNavRestart() {
-        $('#nav-restart-button').click(function(event) {
+        $('#nav-restart-button').click(function (event) {
             event.preventDefault();
             window.location.href = '';
             render();
@@ -97,11 +104,11 @@ const ingredientsModule = (function() {
     function renderIngredientsPage(state) {
         const ingredientList = _renderIngredientList(state.ingredients/* apiFetch.ingredients */)
         const ingredientsPageContent = `
-            <div class="nav" role="navigation">
-                <p class="nav-logo">Foodie</p>
+            <nav class="nav" role="navigation">
+                <p class="nav-logo">Foodie &nbsp;<span class="fas fa-utensils"></span></p>
                 <div class="nav-restart-button" id="nav-restart-button"><span class="fas fa-undo"></span> Restart</div>
-            </div>
-            <div class="page-container">
+            </nav>
+            <section class="page-container">
                 <h1 class="header">Ingredients</h1>
                 <p class="body-paragraphs">Is this what was in your picture? If we got it wrong, you may use this page to add or delete ingredients.</p>
                 ${ingredientList}
@@ -111,14 +118,13 @@ const ingredientsModule = (function() {
                         <span class="fas fa-check"></span>
                     </button>
                 </form>
-                <button class="toggle-add-ingredient button-common" id="toggle-add-ingredient">Add Ingredients</button><br>
+                <button class="toggle-add-ingredient" id="toggle-add-ingredient">Add Ingredients</button><br>
                 <button class="confirm-ingredients-button button-common" id="confirm-ingredients-button">Get some recipes!</button>
-            </div>
+            </section>
             `;
-            
+
         const ingredientsPage = commonModule.renderLayout(ingredientsPageContent);
         $('#root').append(ingredientsPage);
-        $('body').removeClass('waiting');
         _handleConfirmIngredients(state);
         _handleRemoveIngredient(state);
         _handleToggleAddIngredient();
