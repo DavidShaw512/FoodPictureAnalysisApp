@@ -496,8 +496,6 @@ h1 {
 		padding: 10px 40px;
 		margin-right: auto;
 		margin-left: auto;
-		position: absolute;
-		bottom: -10px;
-		right: 10px;
+		margin-top: 20px;
 	}
 }

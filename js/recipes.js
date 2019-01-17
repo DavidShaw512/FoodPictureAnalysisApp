@@ -20,8 +20,9 @@ const recipesModule = (function() {
                     </div>
                     <div class="recipe-name">
                         <h2>${recipeLabel}</h2>
+                        <a href="${recipe.shareAs}" target="_blank"><button class="recipe-link-button button-common">Get the recipe!</button></a>
                     </div>
-                    <a href="${recipe.shareAs}" target="_blank"><button class="recipe-link-button button-common">Get the recipe!</button></a>
+                    
                 </div>
                 <div class="card-ingredient-list">
                     <h3>You'll need:</h3>
