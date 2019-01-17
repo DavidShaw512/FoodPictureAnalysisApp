@@ -6,7 +6,6 @@ function render(currentState) {
         case 'upload':
             imageUploadModule.render(currentState);
             console.log("Rendering upload/landing page");
-            console.log(currentState);
             break;
         case 'ingredients':
             ingredientsModule.render(currentState);
@@ -32,7 +31,7 @@ function main() {
 
 $(function() {
     main();
-    console.log("Loaded up!");
+    console.log("App loaded");
     // render(STORE);
     // handleDeleteIngredient();
 

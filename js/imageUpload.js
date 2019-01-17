@@ -23,7 +23,6 @@ const imageUploadModule = (function() {
         $('#file').change(function(f) {
             $('#submit-button-surrogate').removeClass('hidden');
             let fileName = f.target.files[0].name;
-            console.log(fileName);
             $('#file-name-display').append(`File selected: ${fileName}`)
         })
     }
@@ -36,11 +35,9 @@ const imageUploadModule = (function() {
             $('#submit-button-surrogate').html('<span class="fas fa-carrot loader"></span>');
             /* Trigger file selection */
             const selectedFile = document.getElementById("file").files[0];
-            console.log(selectedFile);
             /* turn data into base64 */ 
             const reader = new FileReader();
             reader.onloadend = function() {
-                console.log('RESULT', reader.result);
                 clarifaiAPI.analyzeImage(reader.result.replace('data:image/jpeg;base64,', ''))
                 .then(arrayOfIngredients => {
                     state.ingredients = arrayOfIngredients;

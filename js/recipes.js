@@ -7,10 +7,6 @@ const recipesModule = (function() {
     let _render = false;
     
     function _renderRecipe(recipe) {
-        console.log(recipe.image);
-        console.log(recipe.label);
-        console.log(recipe.shareAs);
-        console.log(recipe.ingredientLines);
         const recipeLabel = recipe.label.replace('recipes', '');
         const recipeBulletList = recipe.ingredientLines.join('<li>');
         return `
@@ -35,7 +31,6 @@ const recipesModule = (function() {
     }
         
     function _renderRecipeList(recipeList) {
-        console.log(recipeList.length);
         const noRecipes = recipeList.length === 0;
         return noRecipes ?
             `<p class="no-recipes-message">We couldn\'t find any recipes using those ingredients, try again!</p>`

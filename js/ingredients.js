@@ -6,7 +6,6 @@ const ingredientsModule = (function () {
 
 
     function _renderIngredient(ingredient, index) {
-        console.log(index, ingredient);
         return `
             <div class="ingredient" data-index=${index}>
                 <p class="ingredient-label">
@@ -34,16 +33,13 @@ const ingredientsModule = (function () {
             /* change the text in the 'Get some recipes' button to a spinning carrot icon to indicate loading */
             $('#confirm-ingredients-button').html('<span class="fas fa-carrot loader"></span>');
             $('#confirm-ingredients-button').css({
-                'padding': '15px 105px',
+                'padding': '14px 105px',
                 'transition': '0s'
             })
             $('body').addClass('waiting');
             /* functionality that deals with sending the ingredients to the Edamam API */
-            console.log(edamamAPI);
-            console.log(edamamAPI.analyzeIngredients);
             edamamAPI.analyzeIngredients()
                 .then(response => {
-                    console.log(response);
                     state.currentPage = "recipes";
                     render(state);
                 });
@@ -54,11 +50,8 @@ const ingredientsModule = (function () {
     function _handleRemoveIngredient(state) {
         $('.delete-button').click(function (event) {
             event.preventDefault();
-            console.log($(this).closest('div')[0].dataset.index);
             const index = $(this).closest('div')[0].dataset.index;
-            // const index = STORE.ingredients.indexOf(ingredientText);
             state.ingredients.splice(index, 1);
-            // $(this).closest('div').remove();
             _render(state);
 
         })

@@ -27,7 +27,6 @@ const edamamAPI = (function() {
     // Isolate the array of recipes with a const, then populate STORE.recipes by mapping their labels and 'shareAs' urls
 
     const arrayOfRecipes = arrayOfRawRecipes.hits;
-    console.log(arrayOfRecipes);
     arrayOfRecipes.map((item) => console.log(item.recipe.shareAs));
     STORE.recipes = arrayOfRecipes.map((item) => ({
       label: item.recipe.label,
@@ -45,7 +44,6 @@ const edamamAPI = (function() {
     return fetch(`https://api.edamam.com/search?q=${queryString}&app_id=cf776843&app_key=aa1a00e09c97f5eb02a17ec911d35248`)
       .then(_responseToJson)
       .then(responseJson => {
-        console.log(responseJson);
         _extractRecipeData(responseJson);
       })
   };
@@ -86,10 +84,7 @@ const clarifaiAPI = (function() {
   
 
   function extractIngredients(arrayOfImageResults) {
-    console.log(arrayOfImageResults.outputs[0].data.concepts);
-
       // Extract the ingredients with const, then populate the STORE by mapping their names
-
     const fullArray = arrayOfImageResults.outputs[0].data.concepts;
     return fullArray.filter(item => item.value >= 0.85).map(item => item.name);
   }
