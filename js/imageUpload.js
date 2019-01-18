@@ -62,7 +62,7 @@ const imageUploadModule = (function() {
         const landingPageContent = `
             <div class="page-container">
                 <header role="banner" class="banner">
-                    <h1>
+                    <h1 class="banner-logo">
                         <span class="fas fa-utensils"></span><br>
                         Foodie
                     </h1>

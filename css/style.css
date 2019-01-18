@@ -37,14 +37,6 @@ h1 {
 	font-family: 'Fredoka One', 'Open Sans', sans-serif;
 }
 
-.main-logo {
-    margin-left: auto;
-    margin-right: auto;
-	margin-top: 30px;
-	max-width: 80%;
-    padding: 10px;
-}
-
 .header {
 	padding-top: 100px;
     font-size: 40px;
@@ -63,7 +55,7 @@ h1 {
 .upload-button-surrogate {
 	background-color: white;
 	color: #32af6a;
-	padding: 5px 40px;
+	padding: 5px 80px;
 	text-align: center;
 	font-size: 30px;
 	border: solid 5px #32af6a;
@@ -91,7 +83,8 @@ h1 {
 }
 
 .file-name-display {
-	font-size: 14px;
+	font-size: 16px;
+	margin-top: 5px;
 }
 
 .button-common {
@@ -111,7 +104,7 @@ h1 {
 }
 
 .submit-button {
-	padding: 10px 50px;
+	padding: 10px 95px;
     font-size: 25px;
     font-weight: 600;
     position: relative;
@@ -119,7 +112,7 @@ h1 {
 }
 
 .submit-button-surrogate {
-	padding: 10px 50px;
+	padding: 10px 95px;
     font-size: 25px;
     font-weight: 600;
 }
@@ -162,7 +155,7 @@ h1 {
     font-size: 16px;
     font-weight: 600;
     padding: 10px;
-    margin: 10px 5px;
+    margin: 10px 10px 10px 0px;
     cursor: pointer;
     color: white;
     background-color: #5fc5dc;
@@ -322,10 +315,6 @@ h1 {
     font-size: 18px;
 }
 
-.card-actions {
-    text-align: center;
-}
-
 .recipe-name {
 	font-size: 16px;
     font-weight: 600;
@@ -377,11 +366,23 @@ h1 {
 	}
 
 	.banner {
-		padding-top: 50px;
+		padding-top: 35px;
+	}
+
+	.banner-logo {
+		font-size: 80px;
 	}
 
 	.submit-button {
-		font-size: 35px;
+		font-size: 8px;
+	}
+
+	.file-input {
+		font-size: 8px;
+	}
+
+	.submit-button-surrogate {
+		font-size: 30px;
 	}
 
 	/* -- Ingredients page styles -- */
@@ -397,7 +398,8 @@ h1 {
 
 	.nav-restart-button {
 		font-size: 25px;
-    	padding: 16px;
+		padding: 16px;
+		margin-right: 20px;
 	}
 
 	.header {
@@ -461,15 +463,11 @@ h1 {
 	.recipe-name {
 		display: inline-block;
 		position: absolute;
-		font-size: 20px;
+		font-size: 18px;
 		width: 59.9%;
 		padding-right: 10px;
 		padding-left: 10px;
-	}
-
-	.card-actions {
-		width: 49.9%;
-		display: inline-block;
+		margin: 10px;
 	}
 
 	.card-ingredient-list {
