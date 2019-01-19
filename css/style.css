@@ -243,7 +243,8 @@ h1 {
     padding: 10px;
     margin: 0px 20px 20px 20px;
     display: inline-block;
-    width: -webkit-fill-available;
+	width: -webkit-fill-available;
+	width: -moz-available;
     position: relative;
 }
 
@@ -495,5 +496,12 @@ h1 {
 		margin-right: auto;
 		margin-left: auto;
 		margin-top: 20px;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+
+	.banner {
+		padding-top: 80px;
 	}
 }
