@@ -18,7 +18,7 @@ Ingredients screen:
 
 Recipes screen:
 
-![Recipes page](screenshots/foodie-desktop-ingredients.png)
+![Recipes page](screenshots/foodie-desktop-recipes.png)
 
 
 ## Built with:
